@@ -1,59 +1,58 @@
-import React from 'react'
-import BubbleMenu from '../components/BubbleMenu'
+import React from "react";
 
 const Navbar = () => {
-    const items = [
-  {
-    label: 'home',
-    href: '#',
-    ariaLabel: 'Home',
-    rotation: -8,
-    hoverStyles: { bgColor: '#3b82f6', textColor: '#ffffff' }
-  },
-  {
-    label: 'about',
-    href: '#',
-    ariaLabel: 'About',
-    rotation: 8,
-    hoverStyles: { bgColor: '#10b981', textColor: '#ffffff' }
-  },
-  {
-    label: 'projects',
-    href: '#',
-    ariaLabel: 'Projects',
-    rotation: 8,
-    hoverStyles: { bgColor: '#f59e0b', textColor: '#ffffff' }
-  },
-  {
-    label: 'blog',
-    href: '#',
-    ariaLabel: 'Blog',
-    rotation: 8,
-    hoverStyles: { bgColor: '#ef4444', textColor: '#ffffff' }
-  },
-  {
-    label: 'contact',
-    href: '#',
-    ariaLabel: 'Contact',
-    rotation: -8,
-    hoverStyles: { bgColor: '#8b5cf6', textColor: '#ffffff' }
-  }
-];
-
-
   return (
-    <BubbleMenu
-  logo={<span style={{ fontWeight: 700 }}>RB</span>}
-  items={items}
-  menuAriaLabel="Toggle navigation"
-  menuBg="#ffffff"
-  menuContentColor="#111111"
-  useFixedPosition={false}
-  animationEase="back.out(1.5)"
-  animationDuration={0.5}
-  staggerDelay={0.12}
-/>
-  )
-}
+    <nav className="bg-black text-white shadow-md">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between h-16 items-center">
+          {/* Logo */}
+          <div className="text-2xl font-bold text-sky-400">ACM</div>
 
-export default Navbar
+          {/* Menu Items */}
+          <div className="hidden md:flex space-x-6">
+            <a
+              href="#home"
+              className="hover:text-cyan-400 transition-colors duration-300"
+            >
+              Home
+            </a>
+            <a
+              href="#about"
+              className="hover:text-cyan-400 transition-colors duration-300"
+            >
+              About Us
+            </a>
+            <a
+              href="#gallery"
+              className="hover:text-cyan-400 transition-colors duration-300"
+            >
+              Gallery
+            </a>
+            <a
+              href="#events"
+              className="hover:text-cyan-400 transition-colors duration-300"
+            >
+              Events
+            </a>
+            <a
+              href="#contact"
+              className="hover:text-cyan-400 transition-colors duration-300"
+            >
+              Contact
+            </a>
+          </div>
+
+          {/* Mobile Menu Button (Optional) */}
+          <div className="md:hidden">
+            <button className="text-white focus:outline-none">
+              {/* You can add a hamburger icon here */}
+              ☰
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
