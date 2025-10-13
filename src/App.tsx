@@ -1,14 +1,26 @@
-import React from 'react'
-import Navbar from './componets/Navbar'
-import Hero from './componets/hero' 
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./componets/Navbar";
+import Hero from "./componets/hero";
+import Gallery from "./componets/Gallery";
+import Team from "./componets/Team";
 
-const App = () => {
+const App: React.FC = () => {
   return (
-   <div className="min-h-screen bg-black text-white">
-    <Navbar/>
-    <Hero/>
-   </div>
-  )
-}
+    <Router>
+      <div className="min-h-screen bg-black text-white">
+        {/* Navbar always visible */}
+        <Navbar />
 
-export default App
+        {/* Page Routes */}
+        <Routes>
+          <Route path="/" element={<Hero />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/team" element={<Team/>} />
+        </Routes>
+      </div>
+    </Router>
+  );
+};
+
+export default App;

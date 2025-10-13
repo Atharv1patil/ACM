@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const Navbar = () => {
   return (
     <nav className="bg-black text-white shadow-md">
@@ -11,7 +12,7 @@ const Navbar = () => {
           {/* Menu Items */}
           <div className="hidden md:flex space-x-6">
             <a
-              href="#home"
+              href="/"
               className="hover:text-cyan-400 transition-colors duration-300"
             >
               Home
@@ -23,7 +24,7 @@ const Navbar = () => {
               About Us
             </a>
             <a
-              href="#gallery"
+              href="/Gallery"
               className="hover:text-cyan-400 transition-colors duration-300"
             >
               Gallery
@@ -39,6 +40,12 @@ const Navbar = () => {
               className="hover:text-cyan-400 transition-colors duration-300"
             >
               Contact
+            </a>
+            <a
+              href="/team"
+              className="hover:text-cyan-400 transition-colors duration-300"
+            >
+              Team
             </a>
           </div>
 

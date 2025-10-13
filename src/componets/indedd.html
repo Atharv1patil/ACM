@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Modern & Responsive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /*
+            ------------------------------
+            GLOBAL STYLES & TYPOGRAPHY
+            ------------------------------
+        */
+        :root {
+            --color-primary: #6c5ce7;       /* Soft Purple */
+            --color-secondary: #a29bfe;     /* Light Lilac/Violet */
+            --color-background: #ffffff;
+            --color-text-dark: #2d3436;
+            --color-text-light: #f5f6fa;
+            --color-accent: #00cec9;        /* Teal for highlights */
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Poppins', sans-serif;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-body);
+            color: var(--color-text-dark);
+            background-color: var(--color-background);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+
+        /*
+            ------------------------------
+            NAVIGATION BAR
+            ------------------------------
+        */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: var(--color-background);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-text-dark);
+            font-weight: 600;
+            padding: 5px 0;
+            transition: color 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-primary);
+            border-bottom: 2px solid var(--color-primary);
+        }
+
+        .login-btn {
+            background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+            color: var(--color-text-light);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 6px rgba(108, 92, 231, 0.3);
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(108, 92, 231, 0.4);
+        }
+
+        .hamburger {
+            display: none; /* Hidden by default on desktop */
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--color-primary);
+        }
+
+
+        /*
+            ------------------------------
+            DIAMOND BANNER / HERO SECTION
+            ------------------------------
+        */
+        .hero-banner {
+            position: relative;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+            color: var(--color-text-light);
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .main-title {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        /* Decorative Diamond Shapes (Hero Banner) */
+        .diamond-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .diamond {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: #ffffff; 
+            transform: rotate(45deg);
+            border-radius: 10px;
+            transition: all 0.5s ease;
+            opacity: 0.2; 
+        }
+
+        /* Specific Diamond Positions and Sizes */
+        .d1 { top: 5%; left: 10%; width: 80px; height: 80px; opacity: 0.15; }
+        .d2 { bottom: 5%; right: 15%; width: 140px; height: 140px; opacity: 0.3; } 
+        .d3 { top: 30%; right: 5%; width: 50px; height: 50px; opacity: 0.1; }
+        .d4 { bottom: 20%; left: 30%; width: 100px; height: 100px; opacity: 0.25; }
+        .d5 { top: 15%; right: 25%; width: 70px; height: 70px; opacity: 0.15; }
+        .d6 { bottom: 35%; left: 5%; width: 60px; height: 60px; opacity: 0.1; }
+
+
+        /*
+            ------------------------------
+            ABOUT US HEADLINE & WHY CHOOSE US STYLES
+            ------------------------------
+        */
+
+        .about-headline {
+            padding: 80px 0;
+        }
+        
+        /* The main split layout container */
+        .content-split-reverse {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        /* Text Column Styling */
+        .split-text {
+            flex: 1;
+            text-align: left;
+        }
+        .split-text .section-title {
+            text-align: left;
+            margin-top: 0;
+        }
+        .intro-paragraph {
+            margin: 20px 0;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        /* Image Column Styling */
+        .split-image-column {
+            flex: 1;
+            position: relative; /* For absolute positioning of diamonds */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px; /* Increased space for larger diamonds */
+        }
+
+        .image-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            height: 300px;
+            background: linear-gradient(45deg, #ddd, #eee);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            overflow: hidden; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-style: italic;
+            color: #999;
+            z-index: 10; /* Image above diamonds */
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        /* Diamonds around the image */
+        .image-diamond {
+            position: absolute;
+            /* Primary color, semi-transparent. Now acts as a background element */
+            background-color: rgba(108, 92, 231, 0.1); 
+            transform: rotate(45deg);
+            border-radius: 5px;
+            z-index: 1; /* BELOW the image wrapper */
+        }
+
+        .image-diamond.d-small { width: 50px; height: 50px; top: -10px; left: 10%; }
+        .image-diamond.d-medium { width: 80px; height: 80px; bottom: -15px; right: 5%; background-color: rgba(0, 206, 201, 0.15); }
+        .image-diamond.d-large { width: 110px; height: 110px; top: 10%; right: -25px; }
+
+
+        /*
+            ------------------------------
+            INFO GRID
+            ------------------------------
+        */
+        .info-grid {
+            background-color: #f7f7f7;
+            padding: 60px 0;
+        }
+
+        .grid-layout {
+            display: flex;
+            justify-content: space-around;
+            gap: 30px;
+            text-align: left;
+        }
+
+        .grid-item {
+            flex: 1;
+            padding: 30px;
+            background-color: var(--color-background);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .grid-item h3 {
+            font-family: var(--font-heading);
+            color: var(--color-primary);
+            margin-top: 10px;
+        }
+
+        .grid-item .icon {
+            font-size: 2rem;
+            line-height: 1;
+        }
+
+
+        /*
+            ------------------------------
+            WHY CHOOSE US LIST STYLES (NO CHANGES TO LAYOUT CSS, now using .content-split-reverse)
+            ------------------------------
+        */
+        .why-choose-us {
+            padding: 100px 0;
+        }
+
+        .split-text ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 30px 0;
+        }
+
+        .split-text li {
+            padding: 8px 0;
+            font-size: 1.05rem;
+        }
+
+        .cta-button {
+            background: var(--color-accent);
+            color: var(--color-text-light);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #00b09f;
+        }
+
+
+        /*
+            ------------------------------
+            OUR TEAM SECTION
+            ------------------------------
+        */
+        .team-section {
+            background-color: var(--color-secondary);
+            color: var(--color-text-light);
+            padding-bottom: 100px;
+        }
+
+        .team-section .section-title {
+            color: var(--color-text-light);
+            margin-bottom: 50px;
+        }
+
+        .team-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap; 
+        }
+
+        .team-card {
+            background-color: var(--color-background);
+            color: var(--color-text-dark);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px) scale(1.02);
+        }
+
+        .team-photo {
+            width: 100px;
+            height: 100px;
+            background-color: var(--color-primary);
+            border-radius: 50%;
+            margin: 0 auto 15px auto;
+            border: 4px solid var(--color-accent);
+        }
+
+        .team-card h4 {
+            font-family: var(--font-heading);
+            margin: 5px 0;
+            font-size: 1.3rem;
+            color: var(--color-primary);
+        }
+
+        .team-card .role {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+
+        /*
+            ------------------------------
+            FOOTER
+            ------------------------------
+        */
+        .footer {
+            background-color: var(--color-text-dark);
+            color: #ccc;
+            padding: 25px 0;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+
+
+        /*
+            ------------------------------
+            RESPONSIVENESS (MOBILE-FIRST STACKING)
+            ------------------------------
+        */
+
+        /* Tablet View */
+        @media (max-width: 992px) {
+            .main-title {
+                font-size: 2.8rem;
+            }
+
+            .grid-layout {
+                flex-wrap: wrap;
+            }
+
+            .grid-item {
+                flex-basis: 45%; 
+            }
+
+            /* Stack columns on tablet/mobile */
+            .content-split-reverse {
+                flex-direction: column; 
+                gap: 30px;
+            }
+
+            /* Image always above text on small screens (order 1) */
+            .split-image-column {
+                order: 1; 
+                padding: 10px; 
+            }
+
+            /* Text always below image on small screens (order 2) */
+            .split-text {
+                order: 2; 
+                text-align: center;
+            }
+
+            .split-text .section-title {
+                text-align: center;
+            }
+        }
+
+        /* Mobile View */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+            }
+            /* ... (mobile menu and hero styles remain the same) ... */
+
+            .main-title {
+                font-size: 2rem;
+            }
+
+            .grid-item {
+                flex-basis: 100%; 
+            }
+
+            .split-image-column {
+                padding: 0;
+            }
+            .image-wrapper {
+                height: 250px; 
+            }
+
+            /* Hide some diamonds on small mobile for clean design */
+            .image-diamond.d-large {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a id="top"></a>
+
+    <header class="navbar">
+        <div class="logo">FutureCore</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#top">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="login-btn">Login</button>
+        <div class="hamburger">&#9776;</div>
+    </header>
+
+    <section class="hero-banner">
+        <div class="diamond-bg">
+            <div class="diamond d1"></div>
+            <div class="diamond d2"></div>
+            <div class="diamond d3"></div>
+            <div class="diamond d4"></div>
+            <div class="diamond d5"></div>
+            <div class="diamond d6"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="main-title">Innovating Tomorrow, Together.</h1>
+            <p class="subtitle">A forward-thinking company building solutions for the future.</p>
+        </div>
+    </section>
+
+    <section id="about" class="section about-headline">
+        <div class="container content-split-reverse">
+            
+            <div class="split-text">
+                <h2 class="section-title">Our Story & Commitment</h2>
+                <p class="intro-paragraph">
+                    Founded in 2018, FutureCore began with a simple idea: to harness the power of technology to solve complex, real-world problems. We've grown from a small team of innovators into a leading development studio, but our core principle remains the same—client success is our success.
+                </p>
+                <p class="intro-paragraph">
+                    We believe in transparent communication, ethical development, and fostering a culture of continuous learning. Our solutions are built to last, scalable, and designed with a user-centric philosophy that drives tangible results for our partners across the globe.
+                </p>
+            </div>
+
+            <div class="split-image-column">
+                <div class="image-wrapper">
+                    <img src="https://via.placeholder.com/450x300/a29bfe/ffffff?text=Our+Core+Values" alt="A team collaborating in an office.">
+                    
+                    <div class="image-diamond d-small"></div>
+                    <div class="image-diamond d-medium"></div>
+                    <div class="image-diamond d-large"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section info-grid">
+        <div class="container grid-layout">
+            
+            <div class="grid-item">
+                <div class="icon">💻</div>
+                <h3>Who We Are</h3>
+                <p>We are a dedicated collective of engineers, designers, and strategists passionate about building elegant, high-performing digital products. Our diversity is our strength, fueling creative and comprehensive solutions.</p>
+            </div>
+            
+            <div class="grid-item">
+                <div class="icon">🚀</div>
+                <h3>Our Mission</h3>
+                <p>To empower businesses to thrive in the digital landscape by providing bespoke, innovative, and reliable technological solutions that drive growth and efficiency.</p>
+            </div>
+            
+            <div class="grid-item">
+                <div class="icon">💡</div>
+                <h3>What We Do</h3>
+                <p>We specialize in full-stack web development, mobile applications, cloud infrastructure, and AI-driven data analysis, turning complex challenges into simple user experiences.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section why-choose-us">
+        <div class="container content-split-reverse" id="services">
+            
+            <div class="split-text">
+                <h2 class="section-title">Why Choose Us?</h2>
+                <p>
+                    Choosing FutureCore means partnering with a team committed to excellence. We don't just write code; we architect success. Our agile approach ensures flexibility and faster delivery without compromising quality.
+                </p>
+                <ul>
+                    <li>✅ **Expertise:** Decades of combined experience in cutting-edge technologies.</li>
+                    <li>✅ **Transparency:** Clear communication and honest timelines from day one.</li>
+                    <li>✅ **Quality:** Rigorous testing ensures a flawless product launch.</li>
+                    <li>✅ **Support:** Dedicated post-launch maintenance and support.</li>
+                </ul>
+                <button class="cta-button">Start a Project Today</button>
+            </div>
+
+            <div class="split-image-column">
+                <div class="image-wrapper">
+                    <img src="https://via.placeholder.com/450x300/00cec9/ffffff?text=Quality+and+Support" alt="An abstract graphic representing quality and excellence.">
+
+                    <div class="image-diamond d-small"></div>
+                    <div class="image-diamond d-medium"></div>
+                    <div class="image-diamond d-large"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section team-section">
+        <div class="container">
+            <h2 class="section-title">Meet Our Leadership</h2>
+            <div class="team-grid">
+                
+                <div class="team-card">
+                    <div class="team-photo"></div>
+                    <h4>Alex Carter</h4>
+                    <p class="role">Chief Technology Officer</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-photo"></div>
+                    <h4>Sarah Lin</h4>
+                    <p class="role">Lead UX/UI Designer</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-photo"></div>
+                    <h4>Marcus Jones</h4>
+                    <p class="role">Head of Engineering</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-photo"></div>
+                    <h4>Emily Davis</h4>
+                    <p class="role">Client Relations Manager</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="footer">
+        <div class="container">
+            <p>&copy; 2024 FutureCore. All rights reserved.</p>
+            <p>Contact us at info@futurecore.com</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.querySelector('.hamburger');
+            const navbar = document.querySelector('.navbar');
+            const navLinks = document.querySelector('.nav-links');
+
+            // Toggle navigation menu on mobile
+            hamburger.addEventListener('click', () => {
+                navbar.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            // Close menu when a link is clicked (for better mobile UX)
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navbar.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
