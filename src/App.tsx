@@ -4,6 +4,8 @@ import Navbar from "./componets/Navbar";
 import Hero from "./componets/hero";
 import Gallery from "./componets/Gallery";
 import Team from "./componets/Team";
+import EventPage from "./componets/gallery2";
+
 
 const App: React.FC = () => {
   return (
@@ -15,7 +17,7 @@ const App: React.FC = () => {
         {/* Page Routes */}
         <Routes>
           <Route path="/" element={<Hero />} />
-          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/gallery" element={<EventPage />} />
           <Route path="/team" element={<Team/>} />
         </Routes>
       </div>

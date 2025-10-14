@@ -8,7 +8,7 @@ const teamData = [
       {
         name: "Mrs. Swati Tiwari",
         role: "Faculty Coordinator",
-        image: "https://www.shutterstock.com/image-photo/woman-teacher-portrait-classroom-confidence-260nw-2622093545.jpg",
+        image: "/images/mmm-removebg-preview.png",
         linkedin: "https://linkedin.com/in/example",
         email: "rahul.pitale@example.com",
       },
@@ -63,6 +63,7 @@ const teamData = [
 
 const Team: React.FC = () => {
   return (
+    <>
     <div className="bg-black py-20 px-8 min-h-screen">
       {teamData.map((group, index) => (
         <div key={index} className="mb-20">
@@ -78,6 +79,7 @@ const Team: React.FC = () => {
         </div>
       ))}
     </div>
+    </>
   );
 };
 
