@@ -10,7 +10,8 @@ const teamData = [
         role: "Faculty Coordinator",
         image: "/images/mmm-removebg-preview.png",
         linkedin: "https://linkedin.com/in/example",
-        email: "rahul.pitale@example.com",
+        email: "swati.tiwari@example.com",
+        motto: "Guiding innovation and fostering growth.",
       },
     ],
   },
@@ -22,7 +23,8 @@ const teamData = [
         role: "Vice President",
         image: "/images/atharv.png",
         linkedin: "https://linkedin.com/in/example",
-        email: "atharv@example.com",
+        email: "shreyash@example.com",
+        motto: "Leading with passion and purpose.",
       },
       {
         name: "Sakshi Deshmukh",
@@ -30,14 +32,16 @@ const teamData = [
         image: "/images/sakshi.png",
         linkedin: "https://linkedin.com/in/example",
         email: "sakshi@example.com",
+        motto: "Organized minds drive powerful results.",
       },
       {
         name: "Atharv Patil",
-        role: "Techincal Lead",
+        role: "Technical Lead",
         image: "/images/ritik.png",
         linkedin: "https://linkedin.com/in/example",
-        email: "ritik@example.com",
-      }
+        email: "atharv@example.com",
+        motto: "Building ideas into digital reality.",
+      },
     ],
   },
   {
@@ -49,6 +53,7 @@ const teamData = [
         image: "/images/aarav.png",
         linkedin: "https://linkedin.com/in/example",
         email: "aarav@example.com",
+        motto: "Design meets logic, code meets creativity.",
       },
       {
         name: "Priya Sharma",
@@ -56,6 +61,7 @@ const teamData = [
         image: "/images/priya.png",
         linkedin: "https://linkedin.com/in/example",
         email: "priya@example.com",
+        motto: "Crafting powerful systems behind the scenes.",
       },
     ],
   },
@@ -63,7 +69,6 @@ const teamData = [
 
 const Team: React.FC = () => {
   return (
-    <>
     <div className="bg-black py-20 px-8 min-h-screen">
       {teamData.map((group, index) => (
         <div key={index} className="mb-20">
@@ -79,7 +84,6 @@ const Team: React.FC = () => {
         </div>
       ))}
     </div>
-    </>
   );
 };
 
