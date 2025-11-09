@@ -116,7 +116,7 @@ const FrameByFrameHero: React.FC<FrameByFrameHeroProps> = ({
       pin: true,
       scrub: true,
       onUpdate: (self) => {
-        let adjustedProgress = Math.min(1, Math.max(0, self.progress * scrollSpeed));
+        const adjustedProgress = Math.min(1, Math.max(0, self.progress * scrollSpeed));
         targetFrameRef.current = adjustedProgress * (totalFrames - 1);
       },
     });

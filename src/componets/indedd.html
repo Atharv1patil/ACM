@@ -1,858 +1,129 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Modern & Responsive (Dark Theme)</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <style>
-        /*
-            ------------------------------
-            GLOBAL STYLES & TYPOGRAPHY
-            ------------------------------
-        */
-        :root {
-            --color-primary: #a29bfe;      /* Light Purple/Violet (Primary for Dark Mode) */
-            --color-secondary: #6c5ce7;     /* Soft Purple */
-            --color-background: #000000;    /* Black Background */
-            --color-text-dark: #ffffff;     /* White/Light Text for main content */
-            --color-text-light: #000000;    /* Black text for buttons/accents */
-            --color-accent: #00cec9;        /* Teal for highlights */
-            --color-blue-diamond: #4285F4;  /* Specific blue */
-            --color-footer-bg: #121212;     /* Dark Gray for Footer/Body */
-            --color-section-bg: #1e1e1e;    /* Slightly lighter dark background for sections */
-        }
-
-        /* Smooth Scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
-            color: var(--color-text-dark); /* Changed to white */
-            background-color: var(--color-footer-bg); /* Changed to dark gray/black */
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .section {
-            padding: 80px 0;
-            text-align: center;
-        }
-        
-        /* Apply the slightly lighter dark background to alternating sections */
-        .team-section {
-            background-color: var(--color-section-bg);
-        }
-
-        .section-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.5rem;
-            color: var(--color-primary);
-            margin-bottom: 40px;
-            font-weight: 700;
-        }
-
-
-        /*
-            ------------------------------
-            NAVIGATION BAR
-            ------------------------------
-        */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 40px;
-            background-color: var(--color-footer-bg); /* Dark background */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); /* Darker shadow */
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--color-primary);
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-links li {
-            margin: 0 15px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--color-text-dark); /* White text */
-            font-weight: 600;
-            padding: 5px 0;
-            transition: color 0.3s;
-            border-bottom: 2px solid transparent;
-        }
-
-        .nav-links a:hover {
-            color: var(--color-primary);
-            border-bottom: 2px solid var(--color-primary);
-        }
-
-        .login-btn {
-            background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
-            color: var(--color-text-light); /* Black text on bright button */
-            border: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 6px rgba(108, 92, 231, 0.3);
-        }
-
-        .login-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 10px rgba(108, 92, 231, 0.6);
-        }
-
-        .hamburger {
-            display: none; 
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: var(--color-primary);
-        }
-
-
-        /*
-            ------------------------------
-            DIAMOND BANNER / HERO SECTION
-            ------------------------------
-        */
-        .hero-banner {
-            position: relative;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
-            color: var(--color-text-dark); /* White text */
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .main-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            font-weight: 300;
-        }
-
-        /* Decorative Diamond Shapes (Hero Banner) */
-        .diamond-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .diamond {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            background-color: #ffffff; 
-            transform: rotate(45deg);
-            border-radius: 10px;
-            transition: all 0.5s ease;
-            opacity: 0.1; /* Reduced opacity for dark mode */
-        }
-
-        /* Specific Diamond Positions and Sizes */
-        .d1 { top: 5%; left: 10%; width: 80px; height: 80px; opacity: 0.08; }
-        .d2 { bottom: 5%; right: 15%; width: 140px; height: 140px; opacity: 0.15; } 
-        .d3 { top: 30%; right: 5%; width: 50px; height: 50px; opacity: 0.05; }
-        .d4 { bottom: 20%; left: 30%; width: 100px; height: 100px; opacity: 0.12; }
-        .d5 { top: 15%; right: 25%; width: 70px; height: 70px; opacity: 0.08; }
-        .d6 { bottom: 35%; left: 5%; width: 60px; height: 60px; opacity: 0.05; }
-
-
-        /*
-            ------------------------------
-            SPLIT CONTENT STYLES
-            ------------------------------
-        */
-
-        .about-headline, .why-choose-us {
-            padding: 80px 0;
-        }
-        
-        .content-split-reverse {
-            display: flex;
-            align-items: center;
-            gap: 60px;
-        }
-
-        .split-text {
-            flex: 1;
-            text-align: left;
-        }
-        .split-text .section-title {
-            text-align: left;
-            margin-top: 0;
-            color: var(--color-primary);
-        }
-        .intro-paragraph {
-            text-align: justify;
-            margin: 20px 0;
-            font-size: 1.1rem;
-            color: #ccc; /* Light gray for body text */
-        }
-
-        /* Image Column Styling */
-        .split-image-column {
-            flex: 1;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px; 
-        }
-
-        .image-wrapper {
-            position: relative;
-            width: 100%;
-            max-width: 450px;
-            height: 300px;
-            background: none;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Darker shadow for dark mode */
-            overflow: hidden; 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10; 
-            clip-path: polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%);
-        }
-
-        .image-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            border: none;
-        }
-        
-        .diamond-background-shape {
-            position: absolute;
-            width: 105%; 
-            height: 105%;
-            background-color: var(--color-blue-diamond); 
-            clip-path: polygon(0% 15%, 15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%);
-            top: -5%;
-            left: -5%;
-            transform: rotate(-10deg); 
-            z-index: 0; 
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); 
-        }
-
-        .small-diamond-accent {
-            position: absolute;
-            background-color: var(--color-blue-diamond);
-            width: 30px;
-            height: 30px;
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-            z-index: 11; 
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
-        }
-
-        .small-diamond-accent.top-left {
-            top: 5%;
-            left: 5%;
-            transform: rotate(20deg);
-        }
-
-        .small-diamond-accent.bottom-right {
-            bottom: 5%;
-            right: 5%;
-            transform: rotate(-30deg);
-            width: 20px;
-            height: 20px;
-        }
-
-
-        /*
-            ------------------------------
-            WHY CHOOSE US LIST STYLES
-            ------------------------------
-        */
-        .split-text ul {
-            list-style: none;
-            padding: 0;
-            margin: 20px 0 30px 0;
-        }
-
-        .split-text li {
-            padding: 8px 0;
-            font-size: 1.05rem;
-            color: #ddd;
-        }
-
-        .cta-button {
-            background: var(--color-accent);
-            color: var(--color-text-light); /* Black text */
-            border: none;
-            padding: 12px 30px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: background-color 0.3s;
-        }
-
-        .cta-button:hover {
-            background-color: #009d93;
-        }
-
-
-        /*
-            ------------------------------
-            OUR TEAM SECTION (Leadership Style)
-            ------------------------------
-        */
-        .team-section {
-            background-color: var(--color-section-bg); 
-            color: var(--color-text-dark);
-            padding-bottom: 100px;
-        }
-
-        .team-section .section-title {
-            color: var(--color-primary);
-            margin-bottom: 20px;
-        }
-
-        .team-grid {
-            display: flex;
-            justify-content: center;
-            gap: 30px 40px; 
-            flex-wrap: wrap; 
-            padding-top: 40px;
-        }
-
-        .team-card {
-            background-color: transparent; 
-            color: var(--color-text-dark);
-            padding: 0;
-            box-shadow: none;
-            width: 180px; 
-            text-align: center;
-            transition: none;
-        }
-
-        .team-photo {
-            width: 100px;
-            height: 100px;
-            background-color: var(--color-primary);
-            border-radius: 50%;
-            margin: 0 auto 10px auto;
-            border: 3px solid var(--color-primary); /* Added border for definition */
-            background-size: cover;
-            background-position: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-        }
-
-        /* Placeholder colors/styles for different "photos" */
-        .team-photo.photo-1 { background-color: #ff7675; }
-        .team-photo.photo-2 { background-color: #ffeaa7; }
-        .team-photo.photo-3 { background-color: #55efc4; }
-        .team-photo.photo-4 { background-color: #81ecec; }
-        .team-photo.photo-5 { background-color: #a29bfe; }
-        .team-photo.photo-6 { background-color: #fd79a8; }
-        .team-photo.photo-7 { background-color: #0984e3; }
-        .team-photo.photo-8 { background-color: #fab1a0; }
-        .team-photo.photo-9 { background-color: #00b894; }
-        .team-photo.apar { 
-            background-image: url('https://i.ibb.co/6P0jH0G/Apar-Mahajan-Co-President-Cloud-edited.png'); 
-            background-size: cover;
-            background-position: center;
-            border-color: var(--color-secondary);
-        }
-
-
-        .team-card h4 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            margin: 5px 0;
-            font-size: 1rem;
-            color: white;
-        }
-
-        .team-card .role {
-            color: #aaa; /* Lighter color for role */
-            font-size: 0.9rem;
-        }
-
-
-        /*
-            ------------------------------
-            FOOTER (Updated to ACM style)
-            ------------------------------
-        */
-        .footer {
-            background-color: var(--color-footer-bg); 
-            color: #ccc;
-            padding: 50px 0 20px 0;
-            font-size: 0.9rem;
-        }
-
-        .footer-content-wrapper {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 40px;
-        }
-
-        .footer-column {
-            flex-basis: 25%;
-            min-width: 200px;
-            text-align: left;
-        }
-        
-        /* Adjusting the column sizes to better match the image */
-        .social-column { flex-basis: 25%; min-width: 200px; }
-        .about-column { flex-basis: 25%; min-width: 200px; }
-        .committee-column { flex-basis: 25%; min-width: 200px; }
-
-
-        .footer-column h3 {
-            font-size: 1.1rem;
-            color: var(--color-primary); /* Use a bright color for contrast */
-            font-weight: 600;
-            margin-bottom: 15px;
-            padding-bottom: 5px;
-            text-transform: uppercase;
-        }
-        
-        /* Specific top margin for the Co-President text */
-        .co-president-info {
-            margin-top: -15px;
-            margin-bottom: 30px;
-        }
-        
-        .co-president-info h4 {
-            font-size: 1.2rem;
-            color: white;
-            margin: 0;
-        }
-        .co-president-info p {
-            font-size: 0.9rem;
-            color: #ccc;
-            margin: 0;
-        }
-
-
-        .footer-column a, .footer-column p {
-            display: block;
-            color: #ccc;
-            text-decoration: none;
-            margin: 8px 0;
-            transition: color 0.2s;
-            line-height: 1.4;
-        }
-
-        .footer-column a:hover {
-            color: var(--color-primary);
-        }
-        
-        .social-icons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 25px;
-        }
-
-        .social-icons a {
-            font-size: 1.5rem;
-            width: 30px;
-            height: 30px;
-            text-align: center;
-            margin: 0;
-            line-height: 30px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-        }
-        
-        .footer-buttons button {
-            display: block;
-            width: 100%;
-            padding: 10px 0;
-            margin-bottom: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: opacity 0.2s;
-        }
-        .footer-buttons button:hover {
-            opacity: 0.8;
-        }
-
-        .join-mailing {
-            background-color: var(--color-blue-diamond);
-            color: white;
-        }
-        .linktree {
-            background-color: white;
-            color: var(--color-text-dark);
-        }
-
-        /* ACM Committee/Initiative Logo Styles (Placeholder) */
-        .committee-list a {
-            display: flex;
-            align-items: center;
-            margin-bottom: 5px;
-        }
-        .comm-icon {
-            font-size: 1.2rem;
-            margin-right: 8px;
-            line-height: 1;
-        }
-        .comm-color-1 { color: #e84393; } 
-        .comm-color-2 { color: #a29bfe; } 
-        .comm-color-3 { color: #00cec9; } 
-        .comm-color-4 { color: #f9d85b; } 
-        .comm-color-5 { color: #6c5ce7; } 
-        .comm-color-6 { color: #4285F4; } 
-
-        .built-with {
-            text-align: center;
-            margin: 30px 0 10px;
-            width: 100%;
-        }
-
-        .footer-copyright {
-            text-align: center;
-            width: 100%;
-            margin-top: 20px;
-            padding-top: 15px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .footer-bottom-row {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-        }
-
-
-        /*
-            ------------------------------
-            RESPONSIVENESS (UNCHANGED)
-            ------------------------------
-        */
-        @media (max-width: 992px) {
-            .content-split-reverse {
-                flex-direction: column; 
-                gap: 30px;
-            }
-            .split-image-column {
-                order: 1; 
-            }
-            .split-text {
-                order: 2; 
-                text-align: center;
-            }
-            .split-text .section-title {
-                text-align: center;
-            }
-            .team-card {
-                width: calc(50% - 25px); 
-            }
-            .footer-column {
-                flex-basis: 45%; 
-            }
-            .social-column { 
-                order: 1; 
-                flex-basis: 100%;
-                text-align: center;
-            }
-            .social-icons {
-                justify-content: center;
-            }
-            .about-column { order: 2; }
-            .committee-column { order: 3; }
-            .co-president-info {
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 768px) {
-             .team-card {
-                width: 100%; 
-            }
-             .footer-column {
-                flex-basis: 100%;
-            }
-            .footer-buttons {
-                max-width: 300px;
-                margin: 15px auto;
-            }
-            .committee-column, .about-column {
-                text-align: center;
-            }
-            .committee-list a {
-                justify-content: center;
-            }
-            .image-wrapper {
-                max-width: 350px; 
-                height: 250px; 
-            }
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Meet our Team — Tailwind</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Small custom styles for exact visuals -->
+  <style>
+    /* Slightly bigger blur background colors */
+    .color-blur {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -6rem;
+      width: 85%;
+      height: 18rem;
+      filter: blur(48px);
+      opacity: 0.9;
+      pointer-events: none;
+      z-index: 0;
+      background: radial-gradient(circle at 10% 80%, rgba(255,180,120,0.12), transparent 8%),
+                  radial-gradient(circle at 90% 70%, rgba(120,220,255,0.11), transparent 10%),
+                  radial-gradient(circle at 50% 100%, rgba(200,160,255,0.08), transparent 12%);
+      border-radius: 999px;
+    }
+  </style>
 </head>
-<body>
+<body class="antialiased bg-white text-gray-800">
 
-    <a id="top"></a>
-
-    <header class="navbar">
-        <div class="logo">ACM</div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#top">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <button class="login-btn">Login</button>
-        <div class="hamburger">&#9776;</div>
-    </header>
-
-    <section class="hero-banner">
-        <div class="diamond-bg">
-            <div class="diamond d1"></div>
-            <div class="diamond d2"></div>
-            <div class="diamond d3"></div>
-            <div class="diamond d4"></div>
-            <div class="diamond d5"></div>
-            <div class="diamond d6"></div>
-        </div>
-        <div class="hero-content">
-            <h1 class="main-title">Innovating Tomorrow, Together.</h1>
-            <p class="subtitle">A forward-thinking company building solutions for the future.</p>
-        </div>
-    </section>
-
-    <section id="about" class="section about-headline">
-        <div class="container content-split-reverse">
-            
-            <div class="split-text">
-                <h2 class="section-title">What is ACM?</h2>
-                <p class="intro-paragraph">
-                    As a student chapter of the international Association for Computing Machinery,  ACM at UCLA is the largest Computer Science student organization at UCLA and in Southern California. We welcome students of all backgrounds and skill levels to join our community and share our love for technology!
-                </p>
-                <p class="intro-paragraph">
-                    With events such as infosessions, workshops, speaker panels, hackathons, and competitions, we cover a variety of topics including artificial intelligence, virtual reality, cybersecurity, mobile and web development, diversity initiatives, community outreach, and much more. Our events are open to everyone, regardless of major or experience!
-                </p>
-            </div>
-
-            <div class="split-image-column">
-                <div class="image-wrapper">
-                    <img src="https://i.ibb.co/L5gL6R9/Whats-app-Image-2024-05-13-at-1-50-20-PM.jpg" alt="A group of people enjoying an outdoor gathering.">
-                    
-                    <div class="diamond-background-shape"></div>
-                    
-                    <div class="small-diamond-accent top-left"></div>
-                    <div class="small-diamond-accent bottom-right"></div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-      <section id="about" class="section about-headline">
-        <div class="container content-split-reverse">
-            
-            <div class="split-text">
-                <h2 class="section-title">What is ACM?</h2>
-                <p class="intro-paragraph">
-                    As a student chapter of the international Association for Computing Machinery,  ACM at UCLA is the largest Computer Science student organization at UCLA and in Southern California. We welcome students of all backgrounds and skill levels to join our community and share our love for technology!
-                </p>
-                <p class="intro-paragraph">
-                    With events such as infosessions, workshops, speaker panels, hackathons, and competitions, we cover a variety of topics including artificial intelligence, virtual reality, cybersecurity, mobile and web development, diversity initiatives, community outreach, and much more. Our events are open to everyone, regardless of major or experience!
-                </p>
-            </div>
-
-            <div class="split-image-column">
-                <div class="image-wrapper">
-                    <img src="https://i.ibb.co/L5gL6R9/Whats-app-Image-2024-05-13-at-1-50-20-PM.jpg" alt="A group of people enjoying an outdoor gathering.">
-                    
-                    <div class="diamond-background-shape"></div>
-                    
-                    <div class="small-diamond-accent top-left"></div>
-                    <div class="small-diamond-accent bottom-right"></div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="section team-section" style="padding-top: 0;">
-        <div class="container">
-            <h2 class="section-title">Leadership</h2>
-            <p class="intro-paragraph" style="color: #ccc; max-width: 800px; margin: 0 auto 50px auto;">
-                Our Executive Team supports the entire FutureCore community while our departmental leads foster the growth of their specialized committees.
-            </p>
-            <div class="team-grid">
-                
-                <div class="team-card">
-                    <div class="team-photo photo-1"></div>
-                    <h4>Meryl Mathew</h4>
-                    <p class="role">President</p>
-                </div>
-
-                <div class="team-card">
-                    <div class="team-photo photo-2"></div>
-                    <h4>Tiffany Chen</h4>
-                    <p class="role">Internal Vice President</p>
-                </div>
-
-                <div class="team-card">
-                    <div class="team-photo photo-3"></div>
-                    <h4>Alyssa Leung</h4>
-                    <p class="role">External Vice President</p>
-                </div>
-
-                <div class="team-card">
-                    <div class="team-photo photo-4"></div>
-                    <h4 >Selina Song</h4>
-                    <p class="role">Lead, AI Development</p>
-                </div>
-
-                <div class="team-card">
-                    <div class="team-photo photo-5"></div>
-                    <h4>Summer Dixon</h4>
-                    <p class="role">Vice President, Strategy</p>
-                </div>
-
-                <div class="team-card">
-                    <div class="team-photo photo-6"></div>
-                    <h4>Alec Machlis</h4>
-                    <p class="role">Co-Lead, Cybersecurity</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Top nav (pill style) -->
+  <header class="flex justify-center py-8">
     
-    <footer id="contact" class="footer">
-        <div class="footer-content-wrapper">
-            
-            <div class="footer-column social-column">
-                <div class="team-card" style="width: auto; text-align: left;">
-                    <div class="team-photo apar" style="float: left; margin-right: 15px; margin-bottom: 0;"></div>
-                    <div class="co-president-info">
-                        <h4>Apar Mahajan</h4>
-                        <p>Co-President, Cloud</p>
-                    </div>
-                </div>
+  </header>
 
-                <h3 style="margin-top: 25px;">Find Us on Social Media</h3>
-                <div class="social-icons">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
-                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="#" aria-label="Medium"><i class="fab fa-medium-m"></i></a>
-                </div>
-                
-                <div class="footer-buttons">
-                    <button class="join-mailing">Join our Mailing List</button>
-                    <button class="linktree">Linktree</button>
-                </div>
-                
-                <h3 style="margin-top: 25px;">Reach Us At</h3>
-                <a href="mailto:acm@ucla.edu">acm@ucla.edu</a>
-            </div>
+  <!-- Hero / Title -->
+  <main class="relative z-10 max-w-6xl mx-auto px-6 pb-28">
+    <section class="text-center mb-10">
+      <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Meet our Team</h2>
+      <p class="mt-3 text-gray-500 max-w-2xl mx-auto">A diverse team of passionate professionals with unique skills driving innovation and excellence in every project.</p>
+    </section>
 
-            <div class="footer-column about-column">
-                <h3>About ACM at UCLA</h3>
-                <a href="#">About</a>
-                <a href="#">Events</a>
-                <a href="#">General Meeting</a>
-                <a href="#">CS Town Hall</a>
-                <a href="#">Internship Program</a>
-                <a href="#">Sponsors</a>
-                <a href="#">Our Team</a>
-                <a href="#">Membership Portal</a>
-
-                <h3 style="margin-top: 25px;">ACM Initiatives</h3>
-                <div class="committee-list">
-                    <a href="#" class="committee-item"><span class="comm-icon comm-color-5">✦</span> acm.**dev**</a>
-                    <a href="#" class="committee-item"><span class="comm-icon comm-color-3">✦</span> acm.**impact**</a>
-                    <a href="#" class="committee-item"><span class="comm-icon comm-color-5">✦</span> acm.**jedi**</a>
-                </div>
-            </div>
-
-            <div class="footer-column committee-column">
-                <h3>Committees</h3>
-                <div class="committee-list">
-                    <a href="#" class="committee-item"><span class="comm-icon comm-color-1">✦</span> acm.**studio**</a>
-                    <a href="#" class="committee-item"><span class="comm-icon comm-color-2">✦</span> acm.**icpc**</a>
-                    <a href="#" class="committee-item"><span class="comm-icon comm-color-3">✦</span> acm.**design**</a>
-                    <a href="#" class="committee-item"><span class="comm-icon comm-color-4">✦</span> acm.**cyber**</a>
-                    <a href="0 #" class="committee-item"><span class="comm-icon comm-color-5">✦</span> acm.**teachLA**</a>
-                    <a href="#" class="committee-item"><span class="comm-icon comm-color-6">✦</span> acm.**w**</a>
-                    <a href="#" class="committee-item"><span class="comm-icon comm-color-6">✦</span> acm.**ai**</a>
-                    <a href="#" class="committee-item"><span class="comm-icon comm-color-6">✦</span> acm.**cloud**</a>
-                    <a href="#" class="committee-item"><span class="comm-icon comm-color-6">✦</span> acm.**hack**</a>
-                </div>
-            </div>
-
+    <!-- Team grid -->
+    <section class="relative">
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 items-start">
+        <!-- Left tall oval -->
+        <div class="order-1 lg:order-none lg:col-start-1 lg:row-span-2 flex justify-center">
+          <div class="w-48 h-64 md:w-56 md:h-80 lg:w-64 lg:h-96 rounded-[60px] overflow-hidden shadow-xl transform transition hover:scale-105">
+            <img src="https://images.unsplash.com/photo-1545996124-62bc3b1d06b5?q=80&w=900&auto=format&fit=crop" alt="person" class="w-full h-full object-cover">
+          </div>
         </div>
-        
-        <div class="footer-bottom-row">
-            <div class="built-with">
-                <p style="margin: 0; font-size: 0.8rem; color: #666;">BUILT WITH</p>
-                <div style="background-color: white; color: black; font-weight: 700; display: inline-block; padding: 5px 10px; border-radius: 5px; margin-top: 5px;">
-                    <i class="fas fa-plug" style="color: #00AD9F;"></i> - netlify -
-                </div>
-            </div>
-            
-            <div class="footer-copyright">
-                <p>&copy; ACM at UCLA 2025.</p>
-            </div>
+
+        <!-- Circle top-left -->
+        <div class="order-2 lg:col-start-2 lg:row-start-1 flex justify-center">
+          <div class="w-40 h-40 md:w-44 md:h-44 rounded-full overflow-hidden shadow-lg transform transition hover:scale-105">
+            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=900&auto=format&fit=crop" alt="person" class="w-full h-full object-cover">
+          </div>
         </div>
-    </footer>
+
+        <!-- Tall center -->
+        <div class="order-3 lg:col-start-3 lg:row-span-2 flex justify-center">
+          <div class="w-48 h-64 md:w-56 md:h-80 lg:w-64 lg:h-96 rounded-[60px] overflow-hidden shadow-xl transform transition hover:scale-105">
+            <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=900&auto=format&fit=crop" alt="person" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+        <!-- Circle top-right -->
+        <div class="order-4 lg:col-start-4 lg:row-start-1 flex justify-center">
+          <div class="w-36 h-36 md:w-40 md:h-40 rounded-full overflow-hidden shadow-lg transform transition hover:scale-105">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=900&auto=format&fit=crop" alt="person" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+        <!-- Circle far-right top -->
+        <div class="order-5 lg:col-start-5 lg:row-start-1 flex justify-center">
+          <div class="w-36 h-36 md:w-40 md:h-40 rounded-full overflow-hidden shadow-lg transform transition hover:scale-105">
+            <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=900&auto=format&fit=crop" alt="person" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+        <!-- Bottom-left small circle -->
+        <div class="order-6 lg:col-start-1 lg:row-start-3 flex justify-center">
+          <div class="w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden shadow-md transform transition hover:scale-105">
+            <img src="https://images.unsplash.com/photo-1545996109-58e6a8f9ecab?q=80&w=900&auto=format&fit=crop" alt="person" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+        <!-- Middle bottom tall rounded -->
+        <div class="order-7 lg:col-start-3 lg:row-start-3 flex justify-center">
+          <div class="w-48 h-56 md:w-56 md:h-72 lg:w-64 lg:h-80 rounded-2xl overflow-hidden shadow-xl transform transition hover:scale-105">
+            <img src="https://images.unsplash.com/photo-1544005316-94ddf0286df2?q=80&w=900&auto=format&fit=crop" alt="person" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+        <!-- Bottom-right small circle -->
+        <div class="order-8 lg:col-start-4 lg:row-start-3 flex justify-center">
+          <div class="w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden shadow-md transform transition hover:scale-105">
+            <img src="https://images.unsplash.com/photo-1545996124-8b1f8d6f1a7a?q=80&w=900&auto=format&fit=crop" alt="person" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+        <!-- Far-right bottom tall pill -->
+        <div class="order-9 lg:col-start-5 lg:row-start-2 lg:row-span-2 flex justify-center">
+          <div class="w-48 h-64 md:w-56 md:h-80 lg:w-56 lg:h-96 rounded-[48px] overflow-hidden shadow-xl transform transition hover:scale-105">
+            <img src="https://images.unsplash.com/photo-1545996124-62bc3b1d06b5?q=80&w=900&auto=format&fit=crop" alt="person" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+
+      <!-- Colorful blurred base like the reference image -->
+      <div class="color-blur"></div>
+    </section>
+  </main>
+
+  <!-- Footer spacing -->
+  <div class="h-28"></div>
+
+  <!-- Usage tip -->
+  <!--
+    To use your own images:
+      - Replace any `src="https://images.unsplash.com/..."` with local paths like:
+            src="/mnt/data/95bb064c-0eeb-4bca-ad6d-31006884bc58.jpeg"
+      - Keep the container sizes (w-*, h-*) to preserve shapes.
+  -->
 </body>
 </html>

@@ -1,4 +1,3 @@
-import React from "react";
 import EventShowcase from "../components/EventShowCase";
 
 const eventImages = [
@@ -31,8 +30,8 @@ const eventList = [
   { title: "AI Expo", date: "Mar 5", location: "Delhi" },
 ];
 
-const EventPage = () => {
+const Gallery = () => {
   return <EventShowcase images={eventImages} events={eventList} />;
 };
 
-export default EventPage;
+export default Gallery;

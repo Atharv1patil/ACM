@@ -1,4 +1,6 @@
+"use client";
 import React from "react";
+import { motion } from "framer-motion";
 import { FaLinkedinIn, FaEnvelope } from "react-icons/fa";
 
 interface TeamCardProps {
@@ -11,46 +13,114 @@ interface TeamCardProps {
 
 const TeamCard: React.FC<TeamCardProps> = ({ name, role, image, linkedin, email }) => {
   return (
-    <div className="flex flex-col items-center bg-gray-900 rounded-2xl shadow-[0_0_20px_rgba(0,255,255,0.2)] overflow-hidden w-80 hover:-translate-y-2 transition-transform duration-300">
-      {/* Profile Image */}
-      <div className="relative w-full flex justify-center items-center p-6 bg-gradient-to-b from-gray-800 to-gray-900">
-        <img
+    <motion.div
+      className="group relative flex flex-col bg-gradient-to-b from-neutral-900 to-black rounded-2xl shadow-[0_0_25px_rgba(0,255,255,0.15)] overflow-hidden w-72 sm:w-80 md:w-72 lg:w-80 transition-all duration-500 md:hover:shadow-[0_0_40px_rgba(0,255,255,0.3)]"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
+      {/* Image */}
+      <div className="relative w-full h-80 sm:h-96 overflow-hidden">
+        <motion.img
           src={image}
           alt={name}
-          className="w-64 h-80 object-cover rounded-xl shadow-lg border border-cyan-400/30"
+          className="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105"
+          whileHover={{ scale: 1.05 }}
+          draggable={false}
         />
+        {/* Gradient overlay on hover (desktop only) */}
+        <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+      </div>
 
-        {/* Social Icons */}
-        <div className="absolute bottom-5 flex gap-4">
-          {linkedin && (
-            <a
-              href={linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-black/60 backdrop-blur-md shadow-md p-2 rounded-full hover:bg-cyan-400 transition"
-            >
-              <FaLinkedinIn className="text-cyan-300 text-lg" />
-            </a>
-          )}
-          {email && (
-            <a
-              href={`mailto:${email}`}
-              className="bg-black/60 backdrop-blur-md shadow-md p-2 rounded-full hover:bg-cyan-400 transition"
-            >
-              <FaEnvelope className="text-cyan-300 text-lg" />
-            </a>
-          )}
+      {/* Mobile-only: Always visible info section (name, role, socials) */}
+      <div className="block md:hidden p-5 space-y-4 bg-black/70 backdrop-blur-md border-t border-cyan-400/10">
+        <h3 className="text-xl font-bold text-white text-center">{name}</h3>
+        <div className="text-center">
+          <span className="inline-block text-sm font-medium text-black bg-gradient-to-r from-cyan-400 to-sky-400 px-4 py-1.5 rounded-full shadow-[0_0_12px_rgba(0,255,255,0.3)]">
+            {role}
+          </span>
         </div>
+        {/* Social Icons - Always visible on mobile */}
+        {(linkedin || email) && (
+          <div className="flex justify-center gap-4 pt-2">
+            {linkedin && (
+              <motion.a
+                href={linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+                whileHover={{ y: -3, scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <div className="bg-black/70 backdrop-blur-md border border-cyan-400/30 p-3 rounded-full shadow-[0_0_10px_rgba(0,255,255,0.1)] hover:shadow-[0_0_20px_rgba(0,255,255,0.5)] transition-all duration-300">
+                  <FaLinkedinIn className="text-cyan-300 text-lg" />
+                </div>
+              </motion.a>
+            )}
+            {email && (
+              <motion.a
+                href={`mailto:${email}`}
+                className="block"
+                whileHover={{ y: -3, scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <div className="bg-black/70 backdrop-blur-md border border-cyan-400/30 p-3 rounded-full shadow-[0_0_10px_rgba(0,255,255,0.1)] hover:shadow-[0_0_20px_rgba(0,255,255,0.5)] transition-all duration-300">
+                  <FaEnvelope className="text-cyan-300 text-lg" />
+                </div>
+              </motion.a>
+            )}
+          </div>
+        )}
       </div>
 
-      {/* Text Section */}
-      <div className="w-full text-center py-5 bg-gray-900">
-        <h3 className="text-xl font-semibold text-white">{name}</h3>
-        <span className="inline-block mt-3 px-5 py-1 text-sm font-medium bg-cyan-400 text-black rounded-full">
-          {role}
-        </span>
+      {/* Desktop: Name always visible at bottom */}
+      <div className="hidden md:block absolute bottom-0 left-0 right-0 p-6 text-center pointer-events-none">
+        <h3 className="text-2xl font-bold text-cyan-300">{name}</h3>
       </div>
-    </div>
+
+      {/* Desktop: Role + Socials appear on hover */}
+      <motion.div
+        className="hidden md:flex absolute inset-0 flex-col justify-end p-6 pb-16 pointer-events-none"
+        initial={{ opacity: 0 }}
+        whileHover={{ opacity: 1 }}
+        transition={{ duration: 0.4 }}
+      >
+        <div className="text-center space-y-4 pointer-events-auto">
+          <span className="inline-block text-sm font-medium text-black bg-gradient-to-r from-cyan-400 to-sky-400 px-4 py-1.5 rounded-full shadow-[0_0_12px_rgba(0,255,255,0.3)]">
+            {role}
+          </span>
+          <div className="flex justify-center gap-4">
+            {linkedin && (
+              <motion.a
+                href={linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pointer-events-auto"
+                whileHover={{ y: -3 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <div className="bg-black/70 backdrop-blur-md border border-cyan-400/30 p-3 rounded-full shadow-[0_0_10px_rgba(0,255,255,0.1)] hover:shadow-[0_0_20px_rgba(0,255,255,0.5)] transition-all duration-300">
+                  <FaLinkedinIn className="text-cyan-300 text-xl" />
+                </div>
+              </motion.a>
+            )}
+            {email && (
+              <motion.a
+                href={`mailto:${email}`}
+                className="pointer-events-auto"
+                whileHover={{ y: -3 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <div className="bg-black/70 backdrop-blur-md border border-cyan-400/30 p-3 rounded-full shadow-[0_0_10px_rgba(0,255,255,0.1)] hover:shadow-[0_0_20px_rgba(0,255,255,0.5)] transition-all duration-300">
+                  <FaEnvelope className="text-cyan-300 text-xl" />
+                </div>
+              </motion.a>
+            )}
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

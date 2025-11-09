@@ -294,11 +294,10 @@ const ScrollFrameVideo: React.FC<ScrollFrameVideoProps> = ({
   const containerRef = useRef<HTMLDivElement | null>(null);
   const pinRef = useRef<HTMLDivElement | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const stRef = useRef<any>(null);
+  const stRef = useRef<ScrollTrigger | null>(null);
 
   const [isMobile, setIsMobile] = useState(false);
   const [currentText, setCurrentText] = useState<string | null>(null);
-  const [ready, setReady] = useState(false);
   const durationRef = useRef<number>(1);
 
   const derivedWebm = webmSrc ?? videoSrc.replace(/\.mp4$/i, ".webm");
@@ -322,7 +321,6 @@ const ScrollFrameVideo: React.FC<ScrollFrameVideoProps> = ({
 
     const onLoaded = () => {
       durationRef.current = video.duration || 1;
-      setReady(true);
 
       // Kill old instance
       if (stRef.current) stRef.current.kill();

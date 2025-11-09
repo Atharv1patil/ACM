@@ -109,7 +109,6 @@ const ParallaxImg: React.FC<EventImage> = ({ className, alt, src, start, end }) 
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    // @ts-ignore
     offset: [`${start}px end`, `end ${end * -1}px`],
   });
 

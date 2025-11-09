@@ -1,5 +1,4 @@
 import InfiniteMenu from '@/components/InfiniteMenu';
-import React from 'react'
 import { ComicText } from "@/components/ui/comic-text"
 
 

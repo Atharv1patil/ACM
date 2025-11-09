@@ -1,6 +1,5 @@
 import React from "react";
 import PixelTransition from "../components/PixelTransition";
-import type { Pi } from "lucide-react";
 
 const Pixelcard: React.FC = () => {
  
