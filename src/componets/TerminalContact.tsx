@@ -24,7 +24,7 @@ export default function TerminalContactForm() {
   // EmailJS Configuration - Replace these with your actual values
   const EMAILJS_SERVICE_ID = "service_1o62qcw"
   const EMAILJS_TEMPLATE_ID = "template_cen8deu"
-  const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY"
+  const EMAILJS_PUBLIC_KEY = "XAs6mjkCoBoL9qmhS"
 
   const [currentStep, setCurrentStep] = useState<FormStep>("name")
   const [formData, setFormData] = useState<FormData>({

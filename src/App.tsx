@@ -10,6 +10,7 @@ import CrepuscularACM from "./components/CrepuscularACM";
 import AboutUs from "./componets/About";
 import EventsPage from "./componets/EventPage";
 import ContactUs from "./componets/ContactUs";
+import Hackghrce from "./componets/Hackghrce";
 
 const AppContent: React.FC = () => {
   const location = useLocation();
@@ -35,6 +36,7 @@ const AppContent: React.FC = () => {
     <Route path="/about" element={<AboutUs />} />
     <Route path="/events" element={<EventsPage />} />
     <Route path="/contact" element={<ContactUs />} />
+    <Route path="/hackghrce" element={<Hackghrce />} />
       </Routes>
     </div>
   );
