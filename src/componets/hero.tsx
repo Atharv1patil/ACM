@@ -51,15 +51,6 @@ export default function HeroSection() {
          
         </motion.div>
 
-        <motion.p
-          className="text-sm md:text-base font-medium uppercase tracking-wide text-gray-300 mb-4 inline-block px-3 py-1 border border-white/20 rounded-full bg-white/10 backdrop-blur-sm"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-        >
-          Welcome to
-        </motion.p>
-
         <motion.h1
           className="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight"
           initial={{ opacity: 0, y: 30 }}
@@ -99,7 +90,6 @@ export default function HeroSection() {
 
       <AboutSection />
       <WhatWeDo />
-      <MeetOurTeam />
       <CCG />
       {/* <SolutionsSection /> */}
       <JoinUsSection />
