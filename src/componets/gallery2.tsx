@@ -1,4 +1,5 @@
 import EventShowcase from "../components/EventShowCase";
+import Footer from "./Footer";
 
 const eventImages = [
   {
@@ -31,7 +32,11 @@ const eventList = [
 ];
 
 const Gallery = () => {
-  return <EventShowcase images={eventImages} events={eventList} />;
+  return <EventShowcase images={eventImages} events={eventList} /> ;
+  <div>
+    <Footer />
+  </div>
+  
 };
 
 export default Gallery;

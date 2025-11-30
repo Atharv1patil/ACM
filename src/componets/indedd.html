@@ -3,127 +3,155 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Meet our Team — Tailwind</title>
+  <title>Brand Marquee — Tailwind + JS</title>
 
-  <!-- Tailwind CDN -->
+  <!-- Tailwind Play CDN (good for demos) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Small custom styles for exact visuals -->
   <style>
-    /* Slightly bigger blur background colors */
-    .color-blur {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      bottom: -6rem;
-      width: 85%;
-      height: 18rem;
-      filter: blur(48px);
-      opacity: 0.9;
-      pointer-events: none;
-      z-index: 0;
-      background: radial-gradient(circle at 10% 80%, rgba(255,180,120,0.12), transparent 8%),
-                  radial-gradient(circle at 90% 70%, rgba(120,220,255,0.11), transparent 10%),
-                  radial-gradient(circle at 50% 100%, rgba(200,160,255,0.08), transparent 12%);
-      border-radius: 999px;
+    /* Minor extra styles */
+    .marquee-track {
+      will-change: transform;
+    }
+
+    /* Tilt & subtle shadow like your original */
+    .marquee-shell {
+      transform: rotate(-1deg) scale(1.01);
+    }
+
+    /* Keyframes fallback (we use JS for robust speed/width handling) */
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
     }
   </style>
 </head>
-<body class="antialiased bg-white text-gray-800">
+<body class="bg-gray-100">
 
-  <!-- Top nav (pill style) -->
-  <header class="flex justify-center py-8">
-    
-  </header>
-
-  <!-- Hero / Title -->
-  <main class="relative z-10 max-w-6xl mx-auto px-6 pb-28">
-    <section class="text-center mb-10">
-      <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Meet our Team</h2>
-      <p class="mt-3 text-gray-500 max-w-2xl mx-auto">A diverse team of passionate professionals with unique skills driving innovation and excellence in every project.</p>
-    </section>
-
-    <!-- Team grid -->
-    <section class="relative">
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 items-start">
-        <!-- Left tall oval -->
-        <div class="order-1 lg:order-none lg:col-start-1 lg:row-span-2 flex justify-center">
-          <div class="w-48 h-64 md:w-56 md:h-80 lg:w-64 lg:h-96 rounded-[60px] overflow-hidden shadow-xl transform transition hover:scale-105">
-            <img src="https://images.unsplash.com/photo-1545996124-62bc3b1d06b5?q=80&w=900&auto=format&fit=crop" alt="person" class="w-full h-full object-cover">
-          </div>
-        </div>
-
-        <!-- Circle top-left -->
-        <div class="order-2 lg:col-start-2 lg:row-start-1 flex justify-center">
-          <div class="w-40 h-40 md:w-44 md:h-44 rounded-full overflow-hidden shadow-lg transform transition hover:scale-105">
-            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=900&auto=format&fit=crop" alt="person" class="w-full h-full object-cover">
-          </div>
-        </div>
-
-        <!-- Tall center -->
-        <div class="order-3 lg:col-start-3 lg:row-span-2 flex justify-center">
-          <div class="w-48 h-64 md:w-56 md:h-80 lg:w-64 lg:h-96 rounded-[60px] overflow-hidden shadow-xl transform transition hover:scale-105">
-            <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=900&auto=format&fit=crop" alt="person" class="w-full h-full object-cover">
-          </div>
-        </div>
-
-        <!-- Circle top-right -->
-        <div class="order-4 lg:col-start-4 lg:row-start-1 flex justify-center">
-          <div class="w-36 h-36 md:w-40 md:h-40 rounded-full overflow-hidden shadow-lg transform transition hover:scale-105">
-            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=900&auto=format&fit=crop" alt="person" class="w-full h-full object-cover">
-          </div>
-        </div>
-
-        <!-- Circle far-right top -->
-        <div class="order-5 lg:col-start-5 lg:row-start-1 flex justify-center">
-          <div class="w-36 h-36 md:w-40 md:h-40 rounded-full overflow-hidden shadow-lg transform transition hover:scale-105">
-            <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=900&auto=format&fit=crop" alt="person" class="w-full h-full object-cover">
-          </div>
-        </div>
-
-        <!-- Bottom-left small circle -->
-        <div class="order-6 lg:col-start-1 lg:row-start-3 flex justify-center">
-          <div class="w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden shadow-md transform transition hover:scale-105">
-            <img src="https://images.unsplash.com/photo-1545996109-58e6a8f9ecab?q=80&w=900&auto=format&fit=crop" alt="person" class="w-full h-full object-cover">
-          </div>
-        </div>
-
-        <!-- Middle bottom tall rounded -->
-        <div class="order-7 lg:col-start-3 lg:row-start-3 flex justify-center">
-          <div class="w-48 h-56 md:w-56 md:h-72 lg:w-64 lg:h-80 rounded-2xl overflow-hidden shadow-xl transform transition hover:scale-105">
-            <img src="https://images.unsplash.com/photo-1544005316-94ddf0286df2?q=80&w=900&auto=format&fit=crop" alt="person" class="w-full h-full object-cover">
-          </div>
-        </div>
-
-        <!-- Bottom-right small circle -->
-        <div class="order-8 lg:col-start-4 lg:row-start-3 flex justify-center">
-          <div class="w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden shadow-md transform transition hover:scale-105">
-            <img src="https://images.unsplash.com/photo-1545996124-8b1f8d6f1a7a?q=80&w=900&auto=format&fit=crop" alt="person" class="w-full h-full object-cover">
-          </div>
-        </div>
-
-        <!-- Far-right bottom tall pill -->
-        <div class="order-9 lg:col-start-5 lg:row-start-2 lg:row-span-2 flex justify-center">
-          <div class="w-48 h-64 md:w-56 md:h-80 lg:w-56 lg:h-96 rounded-[48px] overflow-hidden shadow-xl transform transition hover:scale-105">
-            <img src="https://images.unsplash.com/photo-1545996124-62bc3b1d06b5?q=80&w=900&auto=format&fit=crop" alt="person" class="w-full h-full object-cover">
-          </div>
+  <main class="p-6">
+    <!-- Container similar to your <section> -->
+    <section class="relative marquee-shell border-y-2 border-zinc-900 bg-white overflow-hidden rounded-lg">
+      <!-- moving region -->
+      <div id="marquee" class="relative z-0 flex items-center gap-2 overflow-hidden">
+        <div id="track" class="flex marquee-track">
+          <!-- Logo items will be injected by JS from the template below -->
         </div>
       </div>
 
-      <!-- Colorful blurred base like the reference image -->
-      <div class="color-blur"></div>
+      <!-- fade overlays on both edges -->
+      <div class="pointer-events-none absolute inset-y-0 left-0 w-32 z-10 bg-gradient-to-r from-white to-white/0"></div>
+      <div class="pointer-events-none absolute inset-y-0 right-0 w-32 z-10 bg-gradient-to-l from-white to-white/0"></div>
     </section>
   </main>
 
-  <!-- Footer spacing -->
-  <div class="h-28"></div>
+  <!-- Template for one brand chip (you can expand this list inside JS) -->
+  <template id="brand-template">
+    <div class="flex items-center justify-center gap-4 px-4 py-3 md:py-4">
+      <!-- example svg icon placeholder (replace with your icon path) -->
+      <svg viewBox="0 0 24 24" aria-hidden="true" class="text-indigo-600 w-6 h-6 md:w-8 md:h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="10"></circle>
+      </svg>
+      <span class="whitespace-nowrap text-lg md:text-xl font-semibold uppercase text-zinc-900">Brand</span>
+    </div>
+  </template>
 
-  <!-- Usage tip -->
-  <!--
-    To use your own images:
-      - Replace any `src="https://images.unsplash.com/..."` with local paths like:
-            src="/mnt/data/95bb064c-0eeb-4bca-ad6d-31006884bc58.jpeg"
-      - Keep the container sizes (w-*, h-*) to preserve shapes.
-  -->
+  <script>
+    /**
+     * Brands Marquee
+     * - List of brand names + optional SVGs (we use a simple placeholder SVG above)
+     * - Clones track content to achieve infinite scrolling
+     * - Uses requestAnimationFrame for smooth translation and pause-on-hover
+     */
+
+    const brands = [
+      "Nike","3M","Abstract","Adobe","Airtable","Amazon","Box","Bytedance",
+      "Chase","Cloudebees","BMW","Burton","Buildkite","Couchbase","Dailymotion",
+      "deliveroo","Epic Games","Genius","GoDaddy","Heroku"
+    ];
+
+    const track = document.getElementById('track');
+    const template = document.getElementById('brand-template');
+
+    // Build a single row of items
+    function buildRow() {
+      const frag = document.createDocumentFragment();
+      for (const name of brands) {
+        const el = template.content.cloneNode(true);
+        // set the brand text
+        el.querySelector('span').textContent = name;
+        // (Option) you could replace the SVG per brand here
+        frag.appendChild(el);
+      }
+      return frag;
+    }
+
+    // Append two copies to allow seamless loop
+    track.appendChild(buildRow());
+    track.appendChild(buildRow());
+
+    // scrolling variables
+    let speed = 0.45; // pixels per frame (~0.45 gives a pleasant slow scroll). Adjust to taste.
+    let paused = false;
+    let offset = 0;
+    let trackWidth = 0;
+
+    function recalc() {
+      // compute width of first half (we duplicated content)
+      // track.children length is 2*brands.length. The loop will wrap at halfWidth.
+      // we want halfWidth: width of the first group.
+      const half = track.children.length / 2;
+      let w = 0;
+      for (let i = 0; i < half; i++) {
+        w += track.children[i].getBoundingClientRect().width;
+      }
+      trackWidth = w;
+    }
+
+    // Pause on hover
+    track.parentElement.addEventListener('mouseenter', () => { paused = true; });
+    track.parentElement.addEventListener('mouseleave', () => { paused = false; });
+
+    // Resize observer to recalc on layout changes
+    const ro = new ResizeObserver(() => recalc());
+    ro.observe(track);
+
+    // initial calc once fonts / layout settle
+    window.addEventListener('load', () => {
+      // small timeout to let layout settle
+      setTimeout(() => {
+        recalc();
+        requestAnimationFrame(loop);
+      }, 50);
+    });
+
+    function loop() {
+      if (!paused && trackWidth > 0) {
+        offset += speed;
+        if (offset >= trackWidth) {
+          // wrap: subtract half width to keep seamless
+          offset -= trackWidth;
+        }
+        // translate negative to move left
+        track.style.transform = `translateX(${-offset}px)`;
+      }
+      requestAnimationFrame(loop);
+    }
+
+    // Make marquee responsive: adjust speed on small screens (optional)
+    function adaptSpeed() {
+      const w = window.innerWidth;
+      if (w < 640) speed = 0.35;
+      else if (w < 1024) speed = 0.45;
+      else speed = 0.55;
+    }
+    window.addEventListener('resize', () => { adaptSpeed(); recalc(); });
+    adaptSpeed();
+
+    // Accessibility: allow keyboard focus to toggle pause
+    track.parentElement.tabIndex = 0;
+    track.parentElement.addEventListener('focus', () => paused = true);
+    track.parentElement.addEventListener('blur', () => paused = false);
+
+  </script>
 </body>
 </html>

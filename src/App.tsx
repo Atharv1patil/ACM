@@ -5,7 +5,6 @@ import Hero from "./componets/hero";
 // import Gallery from "./componets/Gallery";
 import Team from "./componets/Team";
 import Gallery from "./componets/gallery2";
-import CrepuscularACM from "./components/CrepuscularACM";
 // import Footer from "./componets/Footer";
 import AboutUs from "./componets/About";
 import EventsPage from "./componets/EventPage";
@@ -36,10 +35,9 @@ const AppContent: React.FC = () => {
   rayColor="#00000" />} /> */}
     <Route path="/about" element={<AboutUs />} />
     <Route path="/events" element={<EventsPage />} />
-
     <Route path="/contact" element={<ContactUs />} />
-    {/* <Route path="/contact-us" element={<ContactUs />} /> */}
     <Route path="/hackghrce" element={<Hackghrce />} />
+    
       </Routes>
     </div>
   );

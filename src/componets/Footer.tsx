@@ -13,7 +13,7 @@ export const Footer: React.FC = () => {
           <img
             src="/images/logo.svg"
             alt="ACME Logo"
-            className="h-16 w-auto drop-shadow-[0_0_10px_rgba(0,255,255,0.4)]"
+            className="h-25 w-auto drop-shadow-[0_0_10px_rgba(0,255,255,0.4)]"
           />
         </div>
 
