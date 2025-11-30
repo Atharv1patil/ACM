@@ -32,11 +32,13 @@ const eventList = [
 ];
 
 const Gallery = () => {
-  return <EventShowcase images={eventImages} events={eventList} /> ;
-  <div>
-    <Footer />
-  </div>
-  
+  return (
+    <>
+      <EventShowcase images={eventImages} events={eventList} />
+
+      <Footer />
+    </>
+  );
 };
 
 export default Gallery;
