@@ -107,12 +107,12 @@ const AnimatedCard = ({ card }: { card: { id: number; url: string; title: string
 /* ---------------- CARD DATA ---------------- */
 const cards = [
   {
-    url: "https://images.unsplash.com/photo-1581091215367-59ab6c1da2d2?auto=format&fit=crop&w=800&q=80",
+    url: "https://plus.unsplash.com/premium_photo-1661546333305-667b3326bb99?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Workshops",
     id: 1,
   },
   {
-    url: "https://images.unsplash.com/photo-1581091870622-74f7ba3a7a7a?auto=format&fit=crop&w=800&q=80",
+    url: "https://images.unsplash.com/photo-1568027763553-53a8cddd7c6f?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Hackathons",
     id: 2,
   },

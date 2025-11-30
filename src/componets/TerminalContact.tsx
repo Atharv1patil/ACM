@@ -382,92 +382,111 @@ export default function TerminalContactForm() {
       },
     ])
   }
+return (
+  <div className="min-h-full bg-black flex items-center justify-center p-4">
+    <div className="w-full max-w-2xl bg-[#0b0b0b] border border-cyan-500/30 rounded-lg shadow-[0_0_20px_rgba(0,255,255,0.2)] overflow-hidden">
 
-  return (
-    <div className="min-h-screen bg-gray-900 flex items-center justify-center p-4">
-      <div className="w-full max-w-2xl bg-gray-800 border-2 border-gray-700 rounded-lg shadow-2xl overflow-hidden">
-        {/* Terminal Header */}
-        <div className="bg-gray-900 px-4 py-3 flex items-center gap-2.5 border-b border-gray-700">
-          <div className="flex gap-2">
-            <div className="w-3 h-3 rounded-full bg-red-500"></div>
-            <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-            <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
-          </div>
-          <span className="text-gray-300 text-sm font-medium ml-2">Terminal Contact Form (Interactive!)</span>
+      {/* Terminal Header */}
+      <div className="bg-black px-4 py-3 flex items-center gap-2.5 border-b border-cyan-500/20">
+        <div className="flex gap-2">
+          <div className="w-3 h-3 rounded-full bg-red-500"></div>
+          <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+          <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
         </div>
+        <span className="text-cyan-400 text-sm tracking-wide ml-2">
+          Interactive Terminal Contact
+        </span>
+      </div>
 
-        {/* Terminal Content */}
-        <div className="bg-gray-800 p-6 font-mono text-sm overflow-y-auto max-h-96 space-y-1">
-          {history.map((item, index) => (
-            <div
-              key={index}
-              className={`${
-                item.type === "output"
-                  ? item.isValid
-                    ? "text-green-400"
-                    : item.content.includes("✗")
-                      ? "text-red-400"
-                      : "text-gray-300"
-                  : "text-blue-400"
-              }`}
-            >
-              {item.content}
-            </div>
-          ))}
-
-          {/* Current Input Line */}
-          {currentStep !== "complete" && (
-            <div className="flex items-center gap-1 text-gray-300">
-              <span className="text-green-400 font-bold">$ </span>
-              <div className="flex-1 relative">
-                <input
-                  ref={inputRef}
-                  type="text"
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter") {
-                      handleSubmit(e)
-                    }
-                  }}
-                  className="bg-transparent border-0 text-blue-400 outline-none w-full caret-blue-400 transition-all duration-200 focus:ring-2 focus:ring-cyan-400 pr-8"
-                  disabled={isSubmitting}
-                  placeholder={getPlaceholder()}
-                />
-                {/* Blinking cursor indicator */}
-                {!input.trim() && (
-                  <span className="absolute right-0 top-1/2 -translate-y-1/2 w-1 h-4 bg-blue-400 animate-pulse pointer-events-none" />
-                )}
-              </div>
-            </div>
-          )}
-        </div>
-
-        {/* Terminal Footer */}
-        <div className="bg-gray-900 border-t border-gray-700 px-6 py-4 flex gap-3 justify-end items-center">
-          <button
-            onClick={handleReset}
-            className="text-xs px-3 py-1.5 border border-gray-600 text-gray-300 hover:bg-gray-800 bg-transparent rounded transition-colors"
+      {/* Terminal Content */}
+      <div className="bg-black p-6 font-mono text-sm overflow-y-auto max-h-96 space-y-1">
+        {history.map((item, index) => (
+          <div
+            key={index}
+            className={`
+              ${item.type === "output"
+                ? item.isValid
+                  ? "text-green-400"
+                  : item.content.includes("✗")
+                    ? "text-red-400"
+                    : "text-gray-300"
+                : "text-cyan-400"
+              }
+            `}
           >
-            Restart Terminal
-          </button>
-          {currentStep !== "complete" && (
-            <>
-              <span className="text-xs text-gray-400 opacity-70">or press Enter to submit</span>
-              <button
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleSubmit(e as unknown as React.FormEvent);
+            {item.content}
+          </div>
+        ))}
+
+        {/* Current Input */}
+        {currentStep !== "complete" && (
+          <div className="flex items-center gap-2 text-cyan-400 pt-2">
+            <span className="font-bold">$</span>
+            <div className="flex-1 relative">
+              <input
+                ref={inputRef}
+                type="text"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") handleSubmit(e);
                 }}
-                disabled={!input.trim() || isSubmitting}
-                className="text-xs px-3 py-1.5 bg-cyan-500 text-gray-900 hover:bg-cyan-400 disabled:opacity-50 disabled:cursor-not-allowed rounded transition-colors font-medium"
-              >
-                {isSubmitting ? "Sending..." : "Send →"}
-              </button>
-            </>
-          )}
-        </div>
+                className="
+                  bg-transparent border-0 outline-none w-full
+                  text-cyan-300 caret-cyan-400
+                  focus:ring-0 
+                "
+                disabled={isSubmitting}
+                placeholder={getPlaceholder()}
+              />
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Terminal Footer */}
+      <div className="bg-black border-t border-cyan-500/20 px-6 py-4 flex gap-3 justify-end items-center">
+        <button
+          onClick={handleReset}
+          className="
+            text-xs px-3 py-1.5
+            border border-cyan-500/40 
+            text-cyan-300 
+            hover:bg-cyan-500/10
+            rounded transition-colors
+          "
+        >
+          Restart Terminal
+        </button>
+
+        {currentStep !== "complete" && (
+          <>
+            <span className="text-xs text-gray-500">
+              or press Enter
+            </span>
+
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                handleSubmit(e as any);
+              }}
+              disabled={!input.trim() || isSubmitting}
+              className="
+                text-xs px-3 py-1.5 
+                bg-cyan-500 text-black 
+                hover:bg-cyan-400
+                disabled:opacity-50 
+                disabled:cursor-not-allowed 
+                rounded transition-colors
+                font-medium
+              "
+            >
+              {isSubmitting ? "Sending..." : "Send →"}
+            </button>
+          </>
+        )}
       </div>
     </div>
-  )
+  </div>
+);
 }

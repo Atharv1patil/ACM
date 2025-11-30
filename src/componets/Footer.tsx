@@ -1,43 +1,64 @@
 "use client";
 
 import React from "react";
-import {
-  Facebook,
-  Linkedin,
-  Instagram,
-} from "lucide-react";
+import { Facebook, Linkedin, Instagram } from "lucide-react";
 
 export const Footer: React.FC = () => {
   return (
     <footer className="bg-black text-white py-16">
-  <div className="max-w-2xl mx-auto px-6 text-center">
-    
-    {/* Logo/Icon */}
-    <div className="mb-6">
-      <img className="w-auto md:ml-52 h-52" src="/images/logo.svg" alt="ACME Industries Logo" />
-    </div>
+      <div className="max-w-xl mx-auto px-6 text-center">
 
-    {/* Company Name and Tagline */}
-    <h2 className="text-2xl font-bold mb-2 text-white">ACME Industries Ltd.</h2>
-    <p className="text-base text-gray-400 mb-6">Providing reliable tech since 1992</p>
+        {/* Logo */}
+        <div className="flex justify-center mb-6">
+          <img
+            src="/images/logo.svg"
+            alt="ACME Logo"
+            className="h-16 w-auto drop-shadow-[0_0_10px_rgba(0,255,255,0.4)]"
+          />
+        </div>
 
-    {/* Copyright */}
-    <p className="text-sm text-cyan-400 mb-8">Copyright © 2025 - All right reserved</p>
+        {/* Company Name */}
+        <h2 className="text-2xl font-bold tracking-wide text-cyan-400">
+          ACM Student Chapter
+        </h2>
 
-    {/* Social Media Icons */}
-    <div className="flex justify-center gap-8">
-      <a href="#" className="text-white hover:text-cyan-400 transition-colors">
-        <Facebook size={28} />
-      </a>
-      <a href="https://www.instagram.com/acm.ghrcem/" className="text-white hover:text-cyan-400 transition-colors">
-        <Instagram size={28} />
-      </a>
-      <a href="https://www.linkedin.com/company/ghrcem-acm-students-chapter/" className="text-white hover:text-cyan-400 transition-colors">
-        <Linkedin size={28} />
-      </a>
-    </div>
-  </div>
-</footer>
+        {/* Tagline */}
+        <p className="text-gray-400 mt-1 mb-6 text-sm">
+          Empowering tech and innovation
+        </p>
+
+        {/* Copyright */}
+        <p className="text-sm text-cyan-300 mb-8">
+          © 2025 ACM GHRCE – All rights reserved
+        </p>
+
+        {/* Social Icons */}
+        <div className="flex justify-center gap-8">
+          <a
+            href="#"
+            className="text-cyan-400 hover:text-cyan-300 transition-all hover:scale-110 hover:drop-shadow-[0_0_6px_rgba(0,255,255,0.8)]"
+          >
+            <Facebook size={28} />
+          </a>
+
+          <a
+            href="https://www.instagram.com/acm.ghrcem/"
+            target="_blank"
+            className="text-cyan-400 hover:text-cyan-300 transition-all hover:scale-110 hover:drop-shadow-[0_0_6px_rgba(0,255,255,0.8)]"
+          >
+            <Instagram size={28} />
+          </a>
+
+          <a
+            href="https://www.linkedin.com/company/ghrcem-acm-students-chapter/"
+            target="_blank"
+            className="text-cyan-400 hover:text-cyan-300 transition-all hover:scale-110 hover:drop-shadow-[0_0_6px_rgba(0,255,255,0.8)]"
+          >
+            <Linkedin size={28} />
+          </a>
+        </div>
+      </div>
+    </footer>
   );
 };
 
