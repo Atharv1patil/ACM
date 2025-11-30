@@ -3,13 +3,8 @@
 import React from "react";
 import {
   Facebook,
-  Instagram,
-  Twitter,
   Linkedin,
-  Github,
-  Youtube,
-  Mail,
-  Hash,
+  Instagram,
 } from "lucide-react";
 
 export const Footer: React.FC = () => {
@@ -32,13 +27,13 @@ export const Footer: React.FC = () => {
     {/* Social Media Icons */}
     <div className="flex justify-center gap-8">
       <a href="#" className="text-white hover:text-cyan-400 transition-colors">
-        <Twitter size={28} />
-      </a>
-      <a href="#" className="text-white hover:text-cyan-400 transition-colors">
-        <Youtube size={28} />
-      </a>
-      <a href="#" className="text-white hover:text-cyan-400 transition-colors">
         <Facebook size={28} />
+      </a>
+      <a href="https://www.instagram.com/acm.ghrcem/" className="text-white hover:text-cyan-400 transition-colors">
+        <Instagram size={28} />
+      </a>
+      <a href="https://www.linkedin.com/company/ghrcem-acm-students-chapter/" className="text-white hover:text-cyan-400 transition-colors">
+        <Linkedin size={28} />
       </a>
     </div>
   </div>

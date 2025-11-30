@@ -57,7 +57,10 @@ export default function TerminalContactForm() {
     },
   ])
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [sendError, setSendError] = useState<string | null>(null)
+  const [sendError, setSendError] = useState<string |number | null>(null)
+  console.log(sendError)
+  setSendError(String(0)); // or
+   setSendError(`${0}`);
   const inputRef = useRef<HTMLInputElement>(null)
 
   // Auto-focus input on mount
