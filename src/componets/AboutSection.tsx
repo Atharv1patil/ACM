@@ -11,7 +11,7 @@ import { BentoGrid, BentoGridItem } from "../components/ui/bento-grid"
 
 export default function AboutSection() {
   return (
-    <section className="relative w-full bg-gray-950 text-white py-20 px-6 md:px-16 overflow-hidden">
+    <section className="relative w-full bg-black text-white py-20 px-6 md:px-16 overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* LEFT: About Section */}
         <motion.div
