@@ -14,7 +14,7 @@ export const Footer: React.FC = () => {
     
     {/* Logo/Icon */}
     <div className="mb-6">
-      <img className="w-auto h-52 ml-52" src="/images/logo.svg" alt="" />
+      <img className="w-auto md:ml-52 h-52" src="/images/logo.svg" alt="ACME Industries Logo" />
     </div>
 
     {/* Company Name and Tagline */}
