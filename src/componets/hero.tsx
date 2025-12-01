@@ -7,7 +7,6 @@ import CCG from "./CCG"
 import FAQ from "./FAQ"
 import Footer from "./Footer"
 import JoinUsSection from "./SolutionsSection"
-import BrandMarquee from "./Infinte_scroll"
 // If you're not using Next.js, see alternative below
 
 export default function HeroSection() {
@@ -86,7 +85,6 @@ export default function HeroSection() {
      
     </section>
 
-     <BrandMarquee/>
 
     <section className="">
 

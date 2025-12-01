@@ -1,119 +1,321 @@
-import React from 'react';
-// import Navbar from '../components/Navbar';
-import Footer from '../componets/Footer';
+"use client"
 
-const AboutUs: React.FC = () => {
+import { motion } from "framer-motion"
+import { Users, Trophy, Code, Lightbulb } from "lucide-react"
+
+export default function AboutUsPage() {
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-100">
-      {/* <Navbar /> */}
-
-      <main>
-        {/* Hero Section */}
-        <section
-          className="relative overflow-hidden"
-          style={{ clipPath: 'polygon(0 0, 100% 0, 100% 90%, 0 100%)' }}
+    <div className="min-h-screen bg-black text-white">
+      {/* Hero Section with Gradient Background */}
+      <section className="relative h-[500px] w-full overflow-hidden">
+        {/* Animated Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-500" />
+        
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/30" />
+        
+        {/* Decorative Animated Shapes */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="absolute inset-0 pointer-events-none"
         >
-          <div className="h-96 bg-gradient-to-br from-cyan-600 to-blue-500 flex items-center justify-center">
-            <div className="text-center px-4">
-              <h1 className="text-4xl md:text-5xl font-extrabold text-white">
-                Innovating Tomorrow, Together.
-              </h1>
-              <p className="mt-3 text-gray-100/90 max-w-2xl mx-auto">
-                Empowering students to explore, learn, and create in the world of computing and technology.
-              </p>
-            </div>
+          <motion.div
+            animate={{ 
+              rotate: [0, 360],
+              scale: [1, 1.1, 1]
+            }}
+            transition={{ 
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+            className="absolute top-20 left-20 w-32 h-32 bg-white/5 rounded-lg"
+          />
+          <motion.div
+            animate={{ 
+              rotate: [360, 0],
+              scale: [1, 1.2, 1]
+            }}
+            transition={{ 
+              duration: 15,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+            className="absolute bottom-20 right-20 w-48 h-48 bg-white/10 rounded-lg"
+          />
+          <motion.div
+            animate={{ 
+              y: [0, -20, 0],
+              rotate: [0, 180, 360]
+            }}
+            transition={{ 
+              duration: 10,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="absolute top-40 right-40 w-20 h-20 bg-white/5 rounded-lg"
+          />
+        </motion.div>
 
-            {/* Decorative shapes */}
-            <div aria-hidden className="pointer-events-none absolute inset-0">
-              <div className="absolute top-6 left-8 w-20 h-20 bg-white/10 rotate-45 rounded-lg" />
-              <div className="absolute bottom-6 right-12 w-36 h-36 bg-white/15 rotate-45 rounded-lg" />
-              <div className="absolute top-28 right-6 w-12 h-12 bg-white/5 rotate-45 rounded-lg" />
-            </div>
+        {/* Hero Content */}
+        <div className="relative z-10 h-full flex items-center justify-center px-6">
+          <div className="text-center max-w-4xl">
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-5xl md:text-6xl font-extrabold text-white mb-6"
+            >
+              Innovating Tomorrow, <span className="text-cyan-300">Together</span>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              className="text-xl text-gray-100 max-w-2xl mx-auto"
+            >
+              Empowering students to explore, learn, and create in the world of computing and technology.
+            </motion.p>
           </div>
-        </section>
+        </div>
 
-        {/* About Section */}
-        <section id="about" className="py-16">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-cyan-300 mb-4">What is ACM?</h2>
-              <p className="text-gray-300 leading-relaxed mb-4">
-                The <strong>Association for Computing Machinery (ACM)</strong> is the world’s largest
-                computing society, dedicated to advancing computing as a science and profession.
-                The <strong>ACM GHRCE Student Chapter</strong> brings this vision to our campus by
-                fostering innovation, collaboration, and technical excellence among students.
-              </p>
+        {/* Angled Bottom Edge */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+          <svg className="relative block w-full h-20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0 L1200,20 L1200,120 L0,120 Z" fill="#000000" />
+          </svg>
+        </div>
+      </section>
 
-              <p className="text-gray-300 leading-relaxed mb-6">
-                Our chapter aims to organize workshops, coding events, and expert talks to help
-                students enhance their skills in AI, cybersecurity, web development, and more.
-                Whether you’re a beginner or an experienced coder, there’s a place for you in our community.
-              </p>
-            </div>
+      {/* What is ACM Section */}
+      <section className="py-20 px-6 bg-black">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Left - Text Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-cyan-400 mb-6">
+              What is ACM?
+            </h2>
+            <p className="text-gray-300 text-lg leading-relaxed mb-6">
+              The <span className="font-semibold text-blue-400">Association for Computing Machinery (ACM)</span> is the world's largest
+              computing society, dedicated to advancing computing as a science and profession.
+              The <span className="font-semibold text-cyan-400">ACM GHRCE Student Chapter</span> brings this vision to our campus by
+              fostering innovation, collaboration, and technical excellence among students.
+            </p>
+            <p className="text-gray-400 text-lg leading-relaxed">
+              Our chapter aims to organize workshops, coding events, and expert talks to help
+              students enhance their skills in AI, cybersecurity, web development, and more.
+              Whether you're a beginner or an experienced coder, there's a place for you in our community.
+            </p>
+          </motion.div>
 
-            <div className="flex justify-center">
-              <div
-                className="relative w-full max-w-md h-72 overflow-hidden rounded-xl shadow-2xl"
-                style={{
-                  clipPath:
-                    'polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%)',
-                }}
-              >
+          {/* Right - Image with Geometric Frame */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="flex justify-center"
+          >
+            <div className="relative">
+              {/* Background Glow */}
+              <div className="absolute inset-0 bg-blue-500/20 blur-3xl rounded-full" />
+              
+              {/* Main Image Container with Geometric Shape */}
+              <div className="relative w-full max-w-md h-80 overflow-hidden rounded-2xl shadow-2xl shadow-blue-900/50 border border-blue-500/30">
                 <img
-                  src="https://i.ibb.co/L5gL6R9/Whats-app-Image-2024-05-13-at-1-50-20-PM.jpg"
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
                   alt="ACM Team"
                   className="w-full h-full object-cover"
                 />
-
-                <div
-                  className="absolute -inset-2 bg-cyan-500/40 transform -rotate-6"
-                  style={{
-                    clipPath:
-                      'polygon(0% 15%, 15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%)',
-                  }}
-                />
-
-                <div className="absolute top-3 left-3 w-6 h-6 bg-cyan-500 rounded-sm rotate-12" />
-                <div className="absolute bottom-3 right-3 w-5 h-5 bg-cyan-500 rounded-sm rotate-12" />
+                {/* Overlay Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/40 via-transparent to-cyan-500/40" />
               </div>
-            </div>
-          </div>
-        </section>
 
-        {/* Leadership Section */}
-        <section className="py-12 bg-gray-800">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold text-cyan-300 mb-3">Leadership</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+              {/* Decorative Elements */}
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                className="absolute -top-4 -left-4 w-12 h-12 bg-cyan-500 rounded-lg opacity-80"
+              />
+              <motion.div
+                animate={{ rotate: -360 }}
+                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                className="absolute -bottom-4 -right-4 w-16 h-16 bg-blue-500 rounded-lg opacity-80"
+              />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Mission & Values Section */}
+      <section className="py-20 px-6 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Our Core <span className="text-blue-400">Values</span>
+            </h2>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              The principles that guide our community and drive us towards excellence.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: <Code className="w-8 h-8" />,
+                title: "Technical Excellence",
+                description: "Fostering deep technical knowledge and hands-on learning experiences."
+              },
+              {
+                icon: <Users className="w-8 h-8" />,
+                title: "Collaboration",
+                description: "Building a supportive community where ideas are shared and projects come to life."
+              },
+              {
+                icon: <Lightbulb className="w-8 h-8" />,
+                title: "Innovation",
+                description: "Encouraging creative thinking and pushing the boundaries of technology."
+              },
+              {
+                icon: <Trophy className="w-8 h-8" />,
+                title: "Achievement",
+                description: "Celebrating success through competitions, hackathons, and real-world projects."
+              }
+            ].map((value, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -10, scale: 1.02 }}
+                className="bg-black/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 hover:border-blue-500/50 transition-all duration-300 shadow-lg hover:shadow-blue-900/30"
+              >
+                <div className="text-blue-400 mb-4">{value.icon}</div>
+                <h3 className="text-xl font-bold text-white mb-3">{value.title}</h3>
+                <p className="text-gray-400">{value.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership Section */}
+      <section className="py-20 px-6 bg-gray-900">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Our <span className="text-cyan-400">Leadership</span>
+            </h2>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
               Meet our founding team — the pioneers who are shaping the ACM GHRCE chapter and building
               a strong community of passionate learners.
             </p>
+          </motion.div>
 
-            <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 justify-center items-start">
-              {[
-                ['Atharv Patil', 'Chairperson'],
-                ['Jane Doe', 'Vice Chairperson'],
-                ['John Smith', 'Secretary'],
-                ['Aditi Sharma', 'Technical Lead'],
-                ['Rahul Verma', 'Treasurer'],
-                ['Priya Nair', 'Event Coordinator'],
-              ].map(([name, role]) => (
-                <div key={name} className="text-center">
-                  <div className="w-24 h-24 mx-auto rounded-full bg-cyan-400/20 ring-2 ring-cyan-400 mb-3 flex items-center justify-center text-lg font-semibold text-white">
-                    {/* Placeholder circle */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8">
+            {[
+              ['Atharv Patil', 'Chairperson'],
+              ['Jane Doe', 'Vice Chairperson'],
+              ['John Smith', 'Secretary'],
+              ['Aditi Sharma', 'Technical Lead'],
+              ['Rahul Verma', 'Treasurer'],
+              ['Priya Nair', 'Event Coordinator'],
+            ].map(([name, role], index) => (
+              <motion.div
+                key={name}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -10 }}
+                className="text-center group"
+              >
+                <div className="relative mb-4">
+                  {/* Avatar Circle */}
+                  <div className="w-28 h-28 mx-auto rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 p-1 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center">
+                      <span className="text-2xl font-bold text-white">
+                        {name.split(' ').map(n => n[0]).join('')}
+                      </span>
+                    </div>
                   </div>
-                  <h4 className="font-semibold text-white text-sm">{name}</h4>
-                  <p className="text-xs text-gray-400">{role}</p>
+                  {/* Glow Effect */}
+                  <div className="absolute inset-0 bg-blue-500/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-              ))}
-            </div>
+                <h4 className="font-semibold text-white text-base mb-1">{name}</h4>
+                <p className="text-sm text-cyan-400">{role}</p>
+              </motion.div>
+            ))}
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
 
-      <Footer />
+      {/* CTA Section */}
+      <section className="py-20 px-6 bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-500 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
+            backgroundSize: '30px 30px'
+          }} />
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="max-w-4xl mx-auto text-center relative z-10"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Ready to Join Us?
+          </h2>
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            Become part of a vibrant community of innovators, learners, and tech enthusiasts.
+            Start your journey with ACM GHRCE today.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="bg-white text-blue-600 font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition-all hover:scale-105 shadow-lg">
+              Contact Us
+            </button>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-black border-t border-gray-800 py-12 px-6">
+        <div className="max-w-7xl mx-auto text-center">
+          <p className="text-gray-400">
+            © 2024 ACM GHRCE Student Chapter. All rights reserved.
+          </p>
+          <div className="flex justify-center gap-6 mt-4">
+            <a href="#" className="text-gray-400 hover:text-blue-400 transition">Twitter</a>
+            <a href="#" className="text-gray-400 hover:text-blue-400 transition">LinkedIn</a>
+            <a href="#" className="text-gray-400 hover:text-blue-400 transition">Instagram</a>
+            <a href="#" className="text-gray-400 hover:text-blue-400 transition">GitHub</a>
+          </div>
+        </div>
+      </footer>
     </div>
-  );
-};
-
-export default AboutUs;
+  )
+}

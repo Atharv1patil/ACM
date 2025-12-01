@@ -136,7 +136,6 @@
 
 // export default EventHeader;
 
-import React from 'react'
 import { TextHoverEffect } from './TextHover'
 
 function Event() {
