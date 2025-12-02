@@ -341,7 +341,44 @@ export default function Hackghrce() {
           </div>
         </div>
       </section>
+      
+      {/* Community Partners Section */}
+      <section className="py-24 px-4 bg-gradient-to-b from-black/50 to-black/80">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#4284d2] to-blue-400">
+              Community Partners
+            </h2>
+            <p className="text-xl text-gray-400">Join our growing network of tech communities and organizations</p>
+          </div>
 
+          {/* Single Large Box with All Partners */}
+          <div className="bg-gradient-to-br from-[#030712] to-black border border-[#4284d2]/30 rounded-3xl p-12 hover:border-[#4284d2] transition-all duration-300">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+              {/* Partner 1 */}
+              <div className="flex flex-col items-center group">
+                <div className="w-24 h-24 md:w-32 md:h-32 bg-[#4284d2]/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-[#4284d2]/20 transition-all group-hover:scale-110 duration-300 border-2 border-[#4284d2]/30 group-hover:border-[#4284d2]">
+                    <img 
+                        src="/orangehacks.jpg" 
+                        alt="orangehacks" 
+                        className="w-16 h-16 md:w-20 md:h-20 object-contain"
+                     />
+                 </div>
+                  <h4 className="text-sm md:text-base font-semibold text-white text-center">Orangehacks</h4>
+                </div>
+              {/* Partner 2 */}
+              
+            </div>
+
+            {/* CTA to become a partner */}
+            <div className="text-center mt-12">
+              <button className="px-10 py-5 bg-gradient-to-r from-[#4284d2] to-blue-600 rounded-full text-xl font-semibold hover:shadow-lg hover:shadow-[#4284d2]/50 transition-all transform hover:scale-105">
+                Become a Community Partner
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Sponsors Section */}
       <section className="py-24 px-4 bg-black/50">
         <div className="max-w-6xl mx-auto">
