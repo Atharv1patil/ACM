@@ -214,61 +214,7 @@ export default function AboutUsPage() {
       </section>
 
       {/* Leadership Section */}
-      <section className="py-20 px-6 bg-gray-900">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Our <span className="text-cyan-400">Leadership</span>
-            </h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Meet our founding team — the pioneers who are shaping the ACM GHRCE chapter and building
-              a strong community of passionate learners.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8">
-            {[
-              ['Atharv Patil', 'Chairperson'],
-              ['Jane Doe', 'Vice Chairperson'],
-              ['John Smith', 'Secretary'],
-              ['Aditi Sharma', 'Technical Lead'],
-              ['Rahul Verma', 'Treasurer'],
-              ['Priya Nair', 'Event Coordinator'],
-            ].map(([name, role], index) => (
-              <motion.div
-                key={name}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10 }}
-                className="text-center group"
-              >
-                <div className="relative mb-4">
-                  {/* Avatar Circle */}
-                  <div className="w-28 h-28 mx-auto rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 p-1 group-hover:scale-110 transition-transform duration-300">
-                    <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center">
-                      <span className="text-2xl font-bold text-white">
-                        {name.split(' ').map(n => n[0]).join('')}
-                      </span>
-                    </div>
-                  </div>
-                  {/* Glow Effect */}
-                  <div className="absolute inset-0 bg-blue-500/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-                <h4 className="font-semibold text-white text-base mb-1">{name}</h4>
-                <p className="text-sm text-cyan-400">{role}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* CTA Section */}
       <section className="py-20 px-6 bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-500 relative overflow-hidden">

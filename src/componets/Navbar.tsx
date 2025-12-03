@@ -17,8 +17,6 @@ const Navbar = () => {
     { name: "Contact", href: "/contact" }
   ];
 
-  const specialLink = { name: "HackGHRCE", href: "/hackghrce" };
-
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-black/40 backdrop-blur-md border-b border-cyan-500/10 text-white transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -42,35 +40,7 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
-            
-            {/* Special HackGHRCE Link with Shine Effect */}
-            <Link
-              to={specialLink.href}
-              className="relative px-6 py-2 rounded-lg text-sm font-bold overflow-hidden group"
-              style={{
-                background: "linear-gradient(135deg, #06b6d4 0%, #22d3ee 25%, #06b6d4 50%, #22d3ee 75%, #06b6d4 100%)",
-                backgroundSize: "200% 100%",
-                animation: "shine 3s linear infinite",
-                boxShadow: "0 0 20px rgba(6, 182, 212, 0.6), inset 0 0 10px rgba(255, 255, 255, 0.3)"
-              }}
-            >
-              <span className="relative z-10 text-white drop-shadow-lg">
-                ✨ {specialLink.name} ✨
-              </span>
-              <span className="absolute top-0 left-0 w-full h-full opacity-40">
-                <span className="absolute top-1 left-2 text-xs animate-pulse" style={{animationDelay: "0s"}}>⭐</span>
-                <span className="absolute top-2 right-3 text-xs animate-pulse" style={{animationDelay: "0.5s"}}>✨</span>
-                <span className="absolute bottom-1 right-5 text-xs animate-pulse" style={{animationDelay: "1s"}}>⭐</span>
-              </span>
-            </Link>
           </div>
-
-          <style>{`
-            @keyframes shine {
-              0% { background-position: 200% 0; }
-              100% { background-position: -200% 0; }
-            }
-          `}</style>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
@@ -104,21 +74,6 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
-            
-            {/* Special HackGHRCE Link for Mobile */}
-            <Link
-              to={specialLink.href}
-              onClick={closeMenu}
-              className="relative block px-3 py-3 rounded-md text-base font-bold overflow-hidden mt-2"
-              style={{
-                background: "linear-gradient(135deg, #06b6d4 0%, #22d3ee 25%, #06b6d4 50%, #22d3ee 75%, #06b6d4 100%)",
-                backgroundSize: "200% 100%",
-                animation: "shine 3s linear infinite",
-                boxShadow: "0 0 15px rgba(6, 182, 212, 0.6)"
-              }}
-            >
-              <span className="text-white drop-shadow-lg">✨ {specialLink.name} ✨</span>
-            </Link>
           </div>
         </div>
       </div>
