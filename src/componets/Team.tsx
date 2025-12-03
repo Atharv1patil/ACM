@@ -185,16 +185,7 @@ export default function Team() {
   return (
     <div className="min-h-screen bg-black">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-gray-900 to-black py-20 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-6xl md:text-7xl font-extrabold text-white mb-6 tracking-tight">
-            Meet Our <span className="text-cyan-400">Team</span>
-          </h1>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            The passionate individuals driving ACM GHRCE forward
-          </p>
-        </div>
-      </section>
+      
 
       {/* Team Section */}
       <section className="bg-black py-24 px-6 sm:px-10 lg:px-12 text-center">
