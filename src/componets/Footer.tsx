@@ -35,14 +35,14 @@ export const Footer: React.FC = () => {
         {/* Social Icons */}
         <div className="flex justify-center gap-8">
           <a
-            href="#"
+            href="https://www.facebook.com/ghrceacm/"
             className="text-cyan-400 hover:text-cyan-300 transition-all hover:scale-110 hover:drop-shadow-[0_0_6px_rgba(0,255,255,0.8)]"
           >
             <Facebook size={28} />
           </a>
 
           <a
-            href="https://www.instagram.com/acm.ghrcem/"
+            href="https://www.instagram.com/acm_ghrce/"
             target="_blank"
             className="text-cyan-400 hover:text-cyan-300 transition-all hover:scale-110 hover:drop-shadow-[0_0_6px_rgba(0,255,255,0.8)]"
           >
@@ -50,7 +50,7 @@ export const Footer: React.FC = () => {
           </a>
 
           <a
-            href="https://www.linkedin.com/company/ghrcem-acm-students-chapter/"
+            href="https://www.linkedin.com/company/ghrce-acm-student-chapter/"
             target="_blank"
             className="text-cyan-400 hover:text-cyan-300 transition-all hover:scale-110 hover:drop-shadow-[0_0_6px_rgba(0,255,255,0.8)]"
           >

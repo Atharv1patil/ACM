@@ -11,7 +11,6 @@ const JoinUsSection = () => {
       title: "Student Members 👩‍💻",
       description:
         "Join ACM GHRCE to explore hands-on workshops, hackathons, and networking opportunities with peers who share your passion for technology.",
-      gif: "https://media2.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif",
       icon: <FaUserGraduate className="text-cyan-400 text-2xl" />,
     },
     {
@@ -19,25 +18,15 @@ const JoinUsSection = () => {
       title: "Volunteer Team 🔬",
       description:
         "Collaborate with others to organize events, manage operations, and contribute to ACM's mission of empowering learners through technology.",
-      gif: "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGk1c3pva2tpdWVnN3dqdnRjM3dyZHkyYmhlazF3aGtmdTFhd25tdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/CnRmpfxlPutVAFChvm/giphy.gif",
       icon: <FaHandsHelping className="text-cyan-400 text-2xl" />,
     },
     {
       id: 3,
       title: "Leadership Opportunities 💡",
       description:
-        "Step into leadership roles and help shape ACM GHRCE’s future by mentoring peers and driving impactful tech initiatives.",
-      gif: "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXg1anUxbjIxc3lodGJ3cWdhODAyd2MxY3Z6enZ4NTlrcnRxc2lwdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fTn01fiFdTd5pL60ln/giphy.gif",
+        "Step into leadership roles and help shape ACM GHRCE's future by mentoring peers and driving impactful tech initiatives.",
       icon: <FaLightbulb className="text-cyan-400 text-2xl" />,
-    },
-    {
-      id: 4,
-      title: "Lonely Lonely iam so lonely 💡",
-      description:
-        "Step into leadership roles and help shape ACM GHRCE’s future by mentoring peers and driving impactful tech initiatives.",
-      gif: "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExaG9mY3lxamYwaG9qNzdka3FtZXhxdXR1MjA3NHl4bjV3N3J5NjVvOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lLGzvSHi8vrl6nRUlt/giphy.gif",
-      icon: <FaLightbulb className="text-cyan-400 text-2xl" />,
-    },
+    }
   ];
 
   const [selected, setSelected] = useState(categories[0]);
@@ -47,13 +36,13 @@ const JoinUsSection = () => {
       {/* Soft gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-cyan-900/10 via-transparent to-black pointer-events-none" />
 
-      <div className="w-full max-w-7xl mx-auto grid gap-20 grid-cols-1 lg:grid-cols-[1fr_500px] items-center relative z-10">
-        {/* LEFT COLUMN */}
+      <div className="w-full max-w-4xl mx-auto relative z-10">
+        {/* CONTENT */}
         <div>
-          <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-8 text-white">
+          <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-8 text-white text-center">
             <span className="text-cyan-400">Join</span> ACM GHRCE
           </h3>
-          <p className="text-neutral-400 text-base sm:text-lg max-w-md mb-10 leading-relaxed">
+          <p className="text-neutral-400 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed text-center">
             Be part of a growing community of passionate developers, designers,
             and innovators. Learn, build, and grow with us.
           </p>
@@ -112,27 +101,6 @@ const JoinUsSection = () => {
             ))}
           </div>
         </div>
-
-        {/* RIGHT COLUMN - Dynamic GIF with Hover Effect */}
-        <motion.div
-          key={selected.id}
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-          className="flex justify-center items-center"
-        >
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            transition={{ duration: 0.5 }}
-            className="rounded-3xl shadow-[0_0_50px_rgba(0,255,255,0.3)] border border-cyan-500/40 overflow-hidden w-[320px] sm:w-[420px] md:w-[550px] lg:w-[600px] h-[240px] sm:h-[320px] md:h-[400px] lg:h-[450px]"
-            style={{
-              backgroundImage: `url('${selected.gif}')`,
-              backgroundPosition: "center",
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-            }}
-          ></motion.div>
-        </motion.div>
       </div>
     </section>
   );

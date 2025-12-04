@@ -18,24 +18,21 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-black/40 backdrop-blur-md border-b border-cyan-500/10 text-white transition-all duration-300">
+    <nav className="fixed top-0 left-0 w-full z-50 text-white transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-center items-center h-16 relative">
           
-          {/* Logo Section */}
-          <div className="flex-shrink-0">
-            <Link to="/" className="text-xl md:text-2xl font-bold text-cyan-400 tracking-wide hover:text-cyan-300 transition-colors duration-300">
-              ACM GHRCE
-            </Link>
-          </div>
-
-          {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8 items-center font-medium">
-            {navLinks.map((link) => (
+          {/* Desktop Menu - Centered */}
+          <div className="hidden md:flex space-x-8 items-center font-anton">
+            {navLinks.map((link, index) => (
               <Link
                 key={link.name}
                 to={link.href}
-                className="hover:text-cyan-400 transition-colors duration-300"
+                className={`text-lg transition-colors duration-300 ${
+                  index % 2 === 0 
+                    ? "text-cyan-400 hover:text-cyan-300" 
+                    : "text-white hover:text-gray-200"
+                }`}
               >
                 {link.name}
               </Link>
@@ -43,7 +40,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden absolute right-0">
             <button
               onClick={toggleMenu}
               className="text-cyan-400 focus:outline-none text-2xl p-1 rounded hover:bg-white/10 transition-colors duration-200"
@@ -64,12 +61,16 @@ const Navbar = () => {
       >
         <div className="bg-black/95 backdrop-blur-md border-t border-cyan-500/10">
           <div className="px-4 py-4 space-y-2">
-            {navLinks.map((link) => (
+            {navLinks.map((link, index) => (
               <Link
                 key={link.name}
                 to={link.href}
                 onClick={closeMenu}
-                className="block py-3 text-lg font-medium hover:text-cyan-400 transition-colors duration-300 border-b border-white/5 last:border-b-0"
+                className={`block py-3 text-lg font-anton transition-colors duration-300 border-b border-white/5 last:border-b-0 ${
+                  index % 2 === 0 
+                    ? "text-cyan-400 hover:text-cyan-300" 
+                    : "text-white hover:text-gray-200"
+                }`}
               >
                 {link.name}
               </Link>

@@ -25,17 +25,10 @@ const eventImages = [
   },
 ];
 
-const eventList = [
-  { title: "Tech Talk 2025", date: "Jan 20", location: "Pune" },
-  { title: "HackFest 3.0", date: "Feb 10", location: "Mumbai" },
-  { title: "AI Expo", date: "Mar 5", location: "Delhi" },
-];
-
 const Gallery = () => {
   return (
     <>
-      <EventShowcase images={eventImages} events={eventList} />
-
+      <EventShowcase images={eventImages} />
       <Footer />
     </>
   );

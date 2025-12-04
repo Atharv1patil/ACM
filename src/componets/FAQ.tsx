@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const faqs = [
   {
@@ -103,12 +104,12 @@ export default function FAQ() {
       <div className="text-center mt-10">
         <p className="text-gray-500">
           Still have questions?{" "}
-          <a
-            href="#contact"
+          <Link
+            to = "/contact"
             className="text-blue-400 hover:underline font-medium"
           >
             Contact Us
-          </a>{" "}
+          </Link>{" "}
           — we’d love to help!
         </p>
       </div>

@@ -135,15 +135,14 @@
 // };
 
 // export default EventHeader;
-
 import { TextHoverEffect } from './TextHover'
 
 function Event() {
   return (
-    <div>
-      <TextHoverEffect  text= "coming soon"/>
+    <div className="h-[100vh] bg-black w-full relative overflow-clip flex items-center justify-center">
+      <TextHoverEffect text="COMING SOON"/>
     </div>
-  )
+  );
 }
 
-export default Event
+export default Event;

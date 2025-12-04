@@ -6,7 +6,6 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { FiMapPin } from "react-icons/fi";
 
 interface EventImage {
   src: string;
@@ -16,25 +15,17 @@ interface EventImage {
   className?: string;
 }
 
-interface EventItem {
-  title: string;
-  date: string;
-  location: string;
-}
-
 interface EventShowcaseProps {
   images: EventImage[];
-  events: EventItem[];
 }
 
 const SECTION_HEIGHT = 1500;
 
-const EventShowcase: React.FC<EventShowcaseProps> = ({ images, events }) => {
+const EventShowcase: React.FC<EventShowcaseProps> = ({ images }) => {
   return (
     <div className="bg-black">
       <ReactLenis root options={{ lerp: 0.05 }}>
         <Hero images={images} />
-        <Schedule events={events} />
       </ReactLenis>
     </div>
   );
@@ -125,46 +116,5 @@ const ParallaxImg: React.FC<EventImage> = ({ className, alt, src, start, end }) 
       className={className}
       style={{ transform, opacity }}
     />
-  );
-};
-
-// ---------------- SCHEDULE SECTION ----------------
-
-const Schedule: React.FC<{ events: EventItem[] }> = ({ events }) => {
-  return (
-    <section id="event-schedule" className="mx-auto max-w-5xl px-4 py-48 text-white">
-      <motion.h1
-        initial={{ y: 48, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ ease: "easeInOut", duration: 0.75 }}
-        className="mb-20 text-4xl font-black uppercase text-cyan-400 text-center"
-      >
-        Event Schedule
-      </motion.h1>
-
-      {events.map((item, i) => (
-        <ScheduleItem key={i} {...item} />
-      ))}
-    </section>
-  );
-};
-
-const ScheduleItem: React.FC<EventItem> = ({ title, date, location }) => {
-  return (
-    <motion.div
-      initial={{ y: 48, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      transition={{ ease: "easeInOut", duration: 0.75 }}
-      className="mb-9 flex items-center justify-between border-b border-zinc-800 px-3 pb-9"
-    >
-      <div>
-        <p className="mb-1.5 text-xl text-white">{title}</p>
-        <p className="text-sm uppercase text-zinc-400">{date}</p>
-      </div>
-      <div className="flex items-center gap-1.5 text-end text-sm uppercase text-zinc-400">
-        <p>{location}</p>
-        <FiMapPin />
-      </div>
-    </motion.div>
   );
 };
