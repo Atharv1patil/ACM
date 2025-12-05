@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Users, Trophy, Code, Lightbulb } from "lucide-react"
+import Footer from "./Footer"
 
 export default function AboutUsPage() {
   return (
@@ -249,19 +250,7 @@ export default function AboutUsPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-black border-t border-gray-800 py-12 px-6">
-        <div className="max-w-7xl mx-auto text-center">
-          <p className="text-gray-400">
-            © 2024 ACM GHRCE Student Chapter. All rights reserved.
-          </p>
-          <div className="flex justify-center gap-6 mt-4">
-            <a href="#" className="text-gray-400 hover:text-blue-400 transition">Twitter</a>
-            <a href="#" className="text-gray-400 hover:text-blue-400 transition">LinkedIn</a>
-            <a href="#" className="text-gray-400 hover:text-blue-400 transition">Instagram</a>
-            <a href="#" className="text-gray-400 hover:text-blue-400 transition">GitHub</a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

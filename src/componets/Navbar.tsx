@@ -18,21 +18,17 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 text-white transition-all duration-300">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-black/40 backdrop-blur-md border-b border-cyan-500/10 text-white transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-center items-center h-16 relative">
           
           {/* Desktop Menu - Centered */}
-          <div className="hidden md:flex space-x-8 items-center font-anton">
-            {navLinks.map((link, index) => (
+          <div className="hidden md:flex space-x-8 items-center font-medium">
+            {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.href}
-                className={`text-lg transition-colors duration-300 ${
-                  index % 2 === 0 
-                    ? "text-cyan-400 hover:text-cyan-300" 
-                    : "text-white hover:text-gray-200"
-                }`}
+                className="hover:text-cyan-400 transition-colors duration-300"
               >
                 {link.name}
               </Link>
@@ -61,16 +57,12 @@ const Navbar = () => {
       >
         <div className="bg-black/95 backdrop-blur-md border-t border-cyan-500/10">
           <div className="px-4 py-4 space-y-2">
-            {navLinks.map((link, index) => (
+            {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.href}
                 onClick={closeMenu}
-                className={`block py-3 text-lg font-anton transition-colors duration-300 border-b border-white/5 last:border-b-0 ${
-                  index % 2 === 0 
-                    ? "text-cyan-400 hover:text-cyan-300" 
-                    : "text-white hover:text-gray-200"
-                }`}
+                className="block py-3 text-lg font-medium hover:text-cyan-400 transition-colors duration-300 border-b border-white/5 last:border-b-0"
               >
                 {link.name}
               </Link>

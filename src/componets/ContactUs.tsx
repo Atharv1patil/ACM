@@ -5,7 +5,6 @@ import { Mail, Phone, MapPin, Globe } from "lucide-react";
 
 import ContactHero from "./contacthero";
 import TerminalContactForm from "./TerminalContact";
-import VisitCampus from "./visitcampus";
 import Footer from "./Footer";
 
 export default function ContactUs() {
@@ -42,10 +41,10 @@ export default function ContactUs() {
             <div className="flex items-start gap-3">
               <Mail className="text-sky-400 w-5 h-5 mt-1 shrink-0" />
               <a
-                href="mailto:acm@ghrce.ac.in"
+                href="mailto:ghrceacm@gmail.com"
                 className="text-neutral-300 hover:text-sky-400 transition text-sm sm:text-base break-all"
               >
-                acm@ghrce.ac.in
+                ghrceacm@gmail.com
               </a>
             </div>
 
@@ -89,7 +88,7 @@ export default function ContactUs() {
             </a>
 
             <a
-              href="https://linkedin.com/company/acm-ghrce"
+              href="https://www.linkedin.com/company/ghrce-acm-student-chapter/"
               target="_blank"
               className="hover:text-sky-400 transition"
             >
@@ -97,7 +96,7 @@ export default function ContactUs() {
             </a>
 
             <a
-              href="https://instagram.com/acmghrce"
+              href="https://www.instagram.com/acm_ghrce/"
               target="_blank"
               className="hover:text-sky-400 transition"
             >
@@ -125,7 +124,6 @@ export default function ContactUs() {
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <VisitCampus />
       </motion.div>
 
       {/* 🗺️ Google Map — Tailwind Only */}
