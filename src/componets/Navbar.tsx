@@ -20,9 +20,18 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-black/40 backdrop-blur-md border-b border-cyan-500/10 text-white transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-center items-center h-16 relative">
+        <div className="flex justify-between items-center h-20">
           
-          {/* Desktop Menu - Centered */}
+          {/* Logo/Image on Left */}
+          <div className="flex-shrink-0">
+            <img 
+              src="/acm-logo.svg" 
+              alt="acm-logo.svg" 
+              className="h-12 w-auto"
+            />
+          </div>
+
+          {/* Desktop Menu - Right Side */}
           <div className="hidden md:flex space-x-8 items-center font-medium">
             {navLinks.map((link) => (
               <Link
@@ -36,7 +45,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden absolute right-0">
+          <div className="md:hidden">
             <button
               onClick={toggleMenu}
               className="text-cyan-400 focus:outline-none text-2xl p-1 rounded hover:bg-white/10 transition-colors duration-200"
