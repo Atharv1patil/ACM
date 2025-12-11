@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Globe } from "lucide-react";
-
 import ContactHero from "./contacthero";
 import TerminalContactForm from "./TerminalContact";
 import Footer from "./Footer";

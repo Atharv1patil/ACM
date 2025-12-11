@@ -69,7 +69,7 @@ const teamData: TeamMember[] = [
         "Name": "Maithili Korke",
         "LinkedIn Profile Link": "https://www.linkedin.com/in/arpit-bawankar-513476274/",
         "Image": "/images/maithili_korke.jpg",
-        "Role": "Core Team"
+        "Role": "Tech Team"
     },
     {
         "Name": "Atharv Patil",
@@ -99,7 +99,7 @@ const teamData: TeamMember[] = [
         "Name": "Vedant Chinchulkar",
         "LinkedIn Profile Link": "https://www.linkedin.com/in/jayant-mahajan-64b184285",
         "Image": "/images/vedant_chinchulkar.jpg",
-        "Role": "Core Team"
+        "Role": "tech team"
     },
     {
         "Name": "Bharti Dhanushwan",
@@ -147,7 +147,7 @@ const teamData: TeamMember[] = [
         "Name": "Vedant dadhure",
         "LinkedIn Profile Link": "https://www.linkedin.com/in/niharika-tiwari-960250278",
         "Image": "/images/vedant_dadhure.jpg",
-        "Role": "Core Team"
+        "Role": "Marketing team"
     },
     {
         "Name": "Khushi Umale",
@@ -158,19 +158,39 @@ const teamData: TeamMember[] = [
 ];
 
 export default function Team() {
-  // Organize team members into categories
-  const leadership = teamData.filter(member => 
-    member.Role.toLowerCase().includes('chairman') || 
-    member.Role.toLowerCase().includes('vice chair') || 
-    member.Role.toLowerCase().includes('treasurer') || 
-    member.Role.toLowerCase().includes('secretary')
-  );
+  // Helper function to get role priority for core team
+  const getCoreTeamPriority = (role: string) => {
+    const lowerRole = role.toLowerCase();
+    if (lowerRole.includes('chairman')) return 1;
+    if (lowerRole.includes('vice chair')) return 2;
+    if (lowerRole.includes('secretary')) return 3;
+    if (lowerRole.includes('treasurer')) return 4;
+    return 5;
+  };
 
-  const coreTeam = teamData.filter(member => 
-    member.Role.toLowerCase().includes('tech') || 
-    member.Role.toLowerCase().includes('core team') ||
-    member.Role.toLowerCase().includes('member')
-  );
+  // Helper function to get role priority for tech team
+  const getTechTeamPriority = (role: string) => {
+    const lowerRole = role.toLowerCase();
+    if (lowerRole.includes('tech lead')) return 1;
+    return 2;
+  };
+
+  // Organize team members into categories
+  const coreTeam = teamData
+    .filter(member => 
+      member.Role.toLowerCase().includes('chairman') || 
+      member.Role.toLowerCase().includes('vice chair') || 
+      member.Role.toLowerCase().includes('treasurer') || 
+      member.Role.toLowerCase().includes('secretary') ||
+      member.Role.toLowerCase().includes('core team')
+    )
+    .sort((a, b) => getCoreTeamPriority(a.Role) - getCoreTeamPriority(b.Role));
+
+  const techTeam = teamData
+    .filter(member => 
+      member.Role.toLowerCase().includes('tech')
+    )
+    .sort((a, b) => getTechTeamPriority(a.Role) - getTechTeamPriority(b.Role));
 
   const designTeam = teamData.filter(member => 
     member.Role.toLowerCase().includes('design') || 
@@ -178,15 +198,14 @@ export default function Team() {
     member.Role.toLowerCase().includes('content')
   );
 
-  const managementTeam = teamData.filter(member => 
-    member.Role.toLowerCase().includes('management')
+  const members = teamData.filter(member => 
+    member.Role.toLowerCase().includes('member') ||
+    member.Role.toLowerCase().includes('management') ||
+    member.Role.toLowerCase().includes('marketing')
   );
 
   return (
     <div className="min-h-screen bg-black">
-      {/* Hero Section */}
-      
-
       {/* Team Section */}
       <section className="bg-black py-24 px-6 sm:px-10 lg:px-12 text-center">
         <div className="max-w-7xl mx-auto flex flex-col items-center space-y-24">
@@ -202,18 +221,6 @@ export default function Team() {
             <div className="mt-5 h-1 w-28 bg-gradient-to-r from-cyan-400 to-sky-500 mx-auto rounded-full" />
           </div>
 
-          {/* Leadership */}
-          <div className="w-full">
-            <h2 className="text-4xl font-bold text-cyan-400 mb-12 tracking-wide">
-              Leadership
-            </h2>
-            <div className="flex flex-wrap justify-center gap-8 md:gap-12">
-              {leadership.map((member, idx) => (
-                <TeamCard key={idx} {...member} />
-              ))}
-            </div>
-          </div>
-
           {/* Core Team */}
           <div className="w-full">
             <h2 className="text-4xl font-bold text-cyan-400 mb-12 tracking-wide">
@@ -221,6 +228,18 @@ export default function Team() {
             </h2>
             <div className="flex flex-wrap justify-center gap-8 md:gap-12">
               {coreTeam.map((member, idx) => (
+                <TeamCard key={idx} {...member} />
+              ))}
+            </div>
+          </div>
+
+          {/* Tech Team */}
+          <div className="w-full">
+            <h2 className="text-4xl font-bold text-cyan-400 mb-12 tracking-wide">
+              Tech Team
+            </h2>
+            <div className="flex flex-wrap justify-center gap-8 md:gap-12">
+              {techTeam.map((member, idx) => (
                 <TeamCard key={idx} {...member} />
               ))}
             </div>
@@ -238,13 +257,13 @@ export default function Team() {
             </div>
           </div>
 
-          {/* Management Team */}
+          {/* Members */}
           <div className="w-full">
             <h2 className="text-4xl font-bold text-cyan-400 mb-12 tracking-wide">
-              Management Team
+              Members
             </h2>
             <div className="flex flex-wrap justify-center gap-8 md:gap-12">
-              {managementTeam.map((member, idx) => (
+              {members.map((member, idx) => (
                 <TeamCard key={idx} {...member} />
               ))}
             </div>
