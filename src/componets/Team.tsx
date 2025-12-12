@@ -23,27 +23,37 @@ const TeamCard = ({
   "LinkedIn Profile Link": linkedIn,
 }: TeamMember) => (
   <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-cyan-400/30 rounded-2xl p-6 hover:border-cyan-400 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-400/20 transform hover:-translate-y-2 w-64">
-    <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden bg-gray-700 border-2 border-cyan-400/50">
-      <img
-        src={Image || "/api/placeholder/128/128"}
-        alt={Name}
-        className="w-full h-full object-cover"
-      />
-    </div>
+    <div
+  className={`mx-auto mb-4 rounded-full overflow-hidden border-2 border-cyan-400/50 
+    ${Role.toLowerCase().includes("faculty") 
+      ? "w-44 h-44 bg-gray-800"  // Bigger image for faculty
+      : "w-32 h-32 bg-gray-700"  // Normal size for others
+    }
+  `}
+>
+  <img
+  src={Image || "/api/placeholder/128/128"}
+  alt={Name}
+  className={`
+    w-full h-full object-cover
+    ${Role.toLowerCase().includes("faculty") ? "object-top scale-94.8" : ""}
+  `}
+/>
+
+</div>
+
     <h3 className="text-xl font-bold text-white mb-2">{Name}</h3>
     <p className="text-cyan-400 text-sm mb-4 font-semibold">{Role}</p>
 
-    {linkedIn && linkedIn !== "." && (
-      <a
-        href={linkedIn}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors text-sm"
-      >
-        <Linkedin className="w-4 h-4" />
-        LinkedIn
-      </a>
-    )}
+   <a
+  href={linkedIn && linkedIn !== "." ? linkedIn : "#"}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors text-sm"
+>
+  <Linkedin className="w-4 h-4" />
+  LinkedIn
+</a>
   </div>
 );
 
@@ -72,8 +82,8 @@ const teamData: TeamMember[] = [
   { Name: "Siddhi Jaiswal", Image: "/images/siddhi_jaiswal.jpg", Role: "Graphic Designer", "LinkedIn Profile Link": "https://www.linkedin.com/in/siddhi-jaiswal-246462397" },
   { Name: "Divyani Tripathi", Image: "/images/divyani_tripathi.jpg", Role: "Creative Designer", "LinkedIn Profile Link": "https://www.linkedin.com/in/divyani-tripathi-a52178327" },
   { Name: "Soham Kale", Image: "/images/soham_kale.jpg", Role: "Treasurer", "LinkedIn Profile Link": "https://www.linkedin.com/in/soham-kale-60134a2b0/" },
-  { Name: "Om Awadhoot", Image: "/images/om.jpg", Role: "Chairman", "LinkedIn Profile Link": "https://www.linkedin.com/in/om-awadhoot/" },
-  { Name: "Shreyash Bahe", Image: "/images/shreyash_bahe.jpg", Role: "Vice Chair", "LinkedIn Profile Link": "https://www.linkedin.com/in/shreyash-bahe-636749255/" },
+  { Name: "Om Awadhoot", Image: "/images/om2.jpg", Role: "Chairman", "LinkedIn Profile Link": "https://www.linkedin.com/in/om-awadhoot/" },
+  { Name: "Shreyash Bahe", Image: "/images/Shre.jpg", Role: "Vice Chair", "LinkedIn Profile Link": "https://www.linkedin.com/in/shreyash-bahe-636749255/" },
   { Name: "Vedant Dadhure", Image: "/images/vedant_dadhure.jpg", Role: "Outreach Manager", "LinkedIn Profile Link": "https://www.linkedin.com/in/vedant-dadhure-043a15278/" },
   { Name: "Khushi Umale", Image: "/images/Khushi Umale.png", Role: "Secretary", "LinkedIn Profile Link": "https://www.linkedin.com/in/khushi-umale-959601271" },
   { Name: "Kunal Selokar", Image: "/images/kunal_selokar.jpg", Role: "UI/UX Designer", "LinkedIn Profile Link": "" },
@@ -89,8 +99,8 @@ const teamData: TeamMember[] = [
 const facultyMember: TeamMember = {
   Name: "Swati Tiwari",
   Role: "ACM Faculty Incharge",
-  Image: "/images/acm_faculty.jpg", // you will replace with real image
-  "LinkedIn Profile Link": "https://www.linkedin.com/in/swati-tiwari-69825a260/",
+  Image: "/images/mam.jpg", // you will replace with real image
+  "LinkedIn Profile Link": "https://www.linkedin.com/in/swati-tiwari-74108b43/",
 };
 
 // =========================
