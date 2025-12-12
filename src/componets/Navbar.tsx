@@ -24,7 +24,7 @@ const Navbar = () => {
           
           {/* Logo/Image on Left */}
           <div className="flex-shrink-0">
-            <a href="/">
+            <a href="https://ghrce.acm.org/">
             <img 
               src="/acm-logo.svg" 
               alt="acm-logo.svg" 
