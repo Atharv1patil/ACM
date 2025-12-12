@@ -24,11 +24,13 @@ const Navbar = () => {
           
           {/* Logo/Image on Left */}
           <div className="flex-shrink-0">
+            <a href="/contact">
             <img 
               src="/acm-logo.svg" 
               alt="acm-logo.svg" 
               className="h-18 w-auto"
             />
+            </a>
           </div>
 
           {/* Desktop Menu - Right Side */}
