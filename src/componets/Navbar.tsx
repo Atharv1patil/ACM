@@ -11,7 +11,7 @@ const Navbar = () => {
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
-    { name: "Gallery", href: "/gallery" },
+    // { name: "Gallery", href: "/gallery" },
     { name: "Events", href: "/events" },
     { name: "Team", href: "/team" },
     { name: "Contact", href: "/contact" }
@@ -27,7 +27,7 @@ const Navbar = () => {
             <img 
               src="/acm-logo.svg" 
               alt="acm-logo.svg" 
-              className="h-12 w-auto"
+              className="h-18 w-auto"
             />
           </div>
 

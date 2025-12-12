@@ -108,12 +108,21 @@ export default function ContactUs() {
 
       {/* 🗺️ Google Map — Tailwind Only */}
       <motion.section
-        className="px-6 sm:px-10 lg:px-12 pb-20"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.9, ease: "easeOut" }}
-      >
+  className="px-6 sm:px-10 lg:px-12 pb-20"
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.9, ease: "easeOut" }}
+>
+  {/* ⭐ Find Us Here Heading */}
+  <div className="text-center mb-10">
+    <h2 className="text-3xl sm:text-4xl font-bold text-sky-400">
+      Find Us Here
+    </h2>
+    <p className="text-neutral-400 mt-2 text-sm sm:text-base">
+      Visit our campus or connect with us anytime.
+    </p>
+  </div>
         <div
           className="
             relative w-full rounded-2xl border border-neutral-800 overflow-hidden 

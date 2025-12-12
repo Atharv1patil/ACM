@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 import ColorBends from "../components/ColorBends"
 import AboutSection from "./AboutSection"
 import WhatWeDo from "./Whatwedo"
-import CCG from "./CCG"
+// import CCG from "./CCG"
 import FAQ from "./FAQ"
 import Footer from "./Footer"
 import JoinUsSection from "./SolutionsSection"
@@ -45,20 +45,20 @@ export default function Hero() {
             className="mb-4"
           >
             <img
-              src="/images/logo.png"
+              src="/acm-logo.svg"
               alt="ACM GHRCE Logo"
-              className="mx-auto w-50 h-50 object-contain"
+              className="mx-auto w-100 h-50 object-contain"
             />
           </motion.div>
 
-          <motion.h1
+          {/* <motion.h1
             className="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
             ACM GHRCE Chapter
-          </motion.h1>
+          </motion.h1> */}
 
           <motion.p
             className="text-lg md:text-2xl text-gray-300 max-w-2xl mb-8"
@@ -91,7 +91,7 @@ export default function Hero() {
       <section className="bg-black">
         <AboutSection />
         <WhatWeDo />
-        <CCG />
+        {/* <CCG /> */}
         <JoinUsSection />
         <FAQ />
         <Footer />

@@ -1,4 +1,5 @@
 import { Linkedin } from "lucide-react";
+import Footer from "./Footer";
 
 // Define the type for team member
 interface TeamMember {
@@ -272,15 +273,7 @@ export default function Team() {
       </section>
       
       {/* Footer */}
-      <footer className="bg-black border-t border-gray-800 py-12 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <h3 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-sky-500">
-            ACM GHRCE
-          </h3>
-          <p className="text-gray-400 mb-4">Innovation. Collaboration. Excellence.</p>
-          <p className="text-gray-500 text-sm">© 2024 ACM GHRCE. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer/>
     </div>
   );
 }
