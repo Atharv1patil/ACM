@@ -47,7 +47,7 @@ export default function Hero() {
             <img
               src="/acm-logo.svg"
               alt="ACM GHRCE Logo"
-              className="mx-auto w-100 h-50 object-contain"
+              className="mx-auto w-150 h-50 object-contain mb-9"
             />
           </motion.div>
 
