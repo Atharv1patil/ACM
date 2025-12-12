@@ -82,8 +82,8 @@ const teamData: TeamMember[] = [
   { Name: "Siddhi Jaiswal", Image: "/images/siddhi_jaiswal.jpg", Role: "Graphic Designer", "LinkedIn Profile Link": "https://www.linkedin.com/in/siddhi-jaiswal-246462397" },
   { Name: "Divyani Tripathi", Image: "/images/divyani_tripathi.jpg", Role: "Creative Designer", "LinkedIn Profile Link": "https://www.linkedin.com/in/divyani-tripathi-a52178327" },
   { Name: "Soham Kale", Image: "/images/soham_kale.jpg", Role: "Treasurer", "LinkedIn Profile Link": "https://www.linkedin.com/in/soham-kale-60134a2b0/" },
-  { Name: "Om Awadhoot", Image: "/images/om2.jpg", Role: "Chairman", "LinkedIn Profile Link": "https://www.linkedin.com/in/om-awadhoot/" },
-  { Name: "Shreyash Bahe", Image: "/images/Shre.jpg", Role: "Vice Chair", "LinkedIn Profile Link": "https://www.linkedin.com/in/shreyash-bahe-636749255/" },
+  { Name: "Om Awadhoot", Image: "/images/om2.jpg", Role: "Chairperson", "LinkedIn Profile Link": "https://www.linkedin.com/in/om-awadhoot/" },
+  { Name: "Shreyash Bahe", Image: "/images/Shre.jpg", Role: "Vice Chairperson", "LinkedIn Profile Link": "https://www.linkedin.com/in/shreyash-bahe-636749255/" },
   { Name: "Vedant Dadhure", Image: "/images/vedant_dadhure.jpg", Role: "Outreach Manager", "LinkedIn Profile Link": "https://www.linkedin.com/in/vedant-dadhure-043a15278/" },
   { Name: "Khushi Umale", Image: "/images/Khushi Umale.png", Role: "Secretary", "LinkedIn Profile Link": "https://www.linkedin.com/in/khushi-umale-959601271" },
   { Name: "Kunal Selokar", Image: "/images/kunal_selokar.jpg", Role: "UI/UX Designer", "LinkedIn Profile Link": "" },
@@ -98,7 +98,7 @@ const teamData: TeamMember[] = [
 // =========================
 const facultyMember: TeamMember = {
   Name: "Swati Tiwari",
-  Role: "ACM Faculty Incharge",
+  Role: "Faculty Co-ordinator",
   Image: "/images/mam.jpg", // you will replace with real image
   "LinkedIn Profile Link": "https://www.linkedin.com/in/swati-tiwari-74108b43/",
 };
@@ -107,7 +107,7 @@ const facultyMember: TeamMember = {
 // 📌 CATEGORY FILTERS
 // =========================
 const isCoreTeam = (r: string) =>
-  ["chairman", "vice chair", "secretary", "treasurer"].some((x) =>
+  ["chairperson", "vice chairperson", "secretary", "treasurer"].some((x) =>
     r.toLowerCase().includes(x)
   );
 
@@ -139,8 +139,8 @@ const isManagementTeam = (r: string) =>
 // =========================
 const corePriority = (r: string) => {
   r = r.toLowerCase();
-  if (r.includes("chairman")) return 1;
-  if (r.includes("vice chair")) return 2;
+  if (r.includes("chairperson")) return 1;
+  if (r.includes("vice chairperson")) return 2;
   if (r.includes("secretary")) return 3;
   if (r.includes("treasurer")) return 4;
   return 5;
