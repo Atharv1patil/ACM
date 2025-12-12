@@ -209,7 +209,7 @@ export default function Team() {
              Our <span className="text-cyan-400">Team</span>
           </h1>
           <p className="text-neutral-400 text-lg max-w-3xl mx-auto leading-relaxed">
-            The ACM GHRCE team is a dynamic blend of innovators, creators, leaders, and visionaries 
+            The GHRCE ACM team is a dynamic blend of innovators, creators, leaders, and visionaries 
             working together to inspire students and build a thriving technical community.
           </p>
           <div className="mt-5 h-1 w-32 bg-gradient-to-r from-cyan-400 to-sky-500 mx-auto rounded-full" />

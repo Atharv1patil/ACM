@@ -22,7 +22,7 @@ export default function AboutSection() {
           className="space-y-6"
         >
           <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-            About <span className="text-blue-400">ACM GHRCE</span> Chapter
+            About <span className="text-blue-400">GHRCE ACM</span> Chapter
           </h2>
 
           <p className="text-gray-300 text-lg leading-relaxed max-w-xl">

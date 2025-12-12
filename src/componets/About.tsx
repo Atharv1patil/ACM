@@ -108,7 +108,7 @@ export default function AboutUsPage() {
             <p className="text-gray-300 text-lg leading-relaxed mb-6">
               The <span className="font-semibold text-blue-400">Association for Computing Machinery (ACM)</span> is the world's largest
               computing society, dedicated to advancing computing as a science and profession.
-              The <span className="font-semibold text-cyan-400">ACM GHRCE Student Chapter</span> brings this vision to our campus by
+              The <span className="font-semibold text-cyan-400">GHRCE ACM Student Chapter</span> brings this vision to our campus by
               fostering innovation, collaboration, and technical excellence among students.
             </p>
             <p className="text-gray-400 text-lg leading-relaxed">
@@ -241,7 +241,7 @@ export default function AboutUsPage() {
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
             Become part of a vibrant community of innovators, learners, and tech enthusiasts.
-            Start your journey with ACM GHRCE today.
+            Start your journey with GHRCE ACM today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button onClick={() => navigate('/contact')} className="bg-white text-blue-600 font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition-all hover:scale-105 shadow-lg">

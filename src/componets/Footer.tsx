@@ -29,7 +29,7 @@ export const Footer: React.FC = () => {
 
         {/* Copyright */}
         <p className="text-sm text-cyan-300 mb-8">
-          © 2025 ACM GHRCE – All rights reserved
+          © 2025 GHRCE ACM – All rights reserved
         </p>
 
         {/* Social Icons */}

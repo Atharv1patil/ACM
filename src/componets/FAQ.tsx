@@ -7,12 +7,12 @@ import { Link } from "react-router-dom";
 
 const faqs = [
   {
-    question: "What is ACM GHRCE Student Chapter?",
+    question: "What is GHRCE ACM Student Chapter?",
     answer:
-      "The ACM GHRCE Student Chapter is a community of tech enthusiasts at G. H. Raisoni College of Engineering. We aim to promote learning, innovation, and collaboration in computer science and technology through events, workshops, and competitions.",
+      "The GHRCE ACM Student Chapter is a community of tech enthusiasts at G. H. Raisoni College of Engineering. We aim to promote learning, innovation, and collaboration in computer science and technology through events, workshops, and competitions.",
   },
   {
-    question: "Who can join the ACM GHRCE Student Chapter?",
+    question: "Who can join the GHRCE ACM Student Chapter?",
     answer:
       "Any student from GHRCE with an interest in technology, coding, design, or research can join the chapter. We welcome students from all branches who are curious and eager to learn.",
   },
@@ -60,7 +60,7 @@ export default function FAQ() {
         </motion.h2>
 
         <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-          Get answers to some of the most common questions about the ACM GHRCE
+          Get answers to some of the most common questions about the GHRCE ACM
           Student Chapter and how you can be part of our tech-driven community.
         </p>
       </div>

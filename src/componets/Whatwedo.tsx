@@ -24,7 +24,7 @@ export default function WhatWeDo() {
           viewport={{ once: true }}
           className="text-gray-400 text-lg max-w-2xl mx-auto"
         >
-          Discover how the ACM GHRCE Student Chapter empowers students through
+          Discover how the GHRCE ACM Student Chapter empowers students through
           innovation, collaboration, and creativity.
         </motion.p>
       </div>

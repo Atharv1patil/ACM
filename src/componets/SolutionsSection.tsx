@@ -10,7 +10,7 @@ const JoinUsSection = () => {
       id: 1,
       title: "Student Members 👩‍💻",
       description:
-        "Join ACM GHRCE to explore hands-on workshops, hackathons, and networking opportunities with peers who share your passion for technology.",
+        "Join GHRCE ACM to explore hands-on workshops, hackathons, and networking opportunities with peers who share your passion for technology.",
       icon: <FaUserGraduate className="text-cyan-400 text-2xl" />,
     },
     {
@@ -24,7 +24,7 @@ const JoinUsSection = () => {
       id: 3,
       title: "Leadership Opportunities 💡",
       description:
-        "Step into leadership roles and help shape ACM GHRCE's future by mentoring peers and driving impactful tech initiatives.",
+        "Step into leadership roles and help shape GHRCE ACM's future by mentoring peers and driving impactful tech initiatives.",
       icon: <FaLightbulb className="text-cyan-400 text-2xl" />,
     }
   ];
@@ -40,7 +40,7 @@ const JoinUsSection = () => {
         {/* CONTENT */}
         <div>
           <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-8 text-white text-center">
-            <span className="text-cyan-400">Join</span> ACM GHRCE
+            <span className="text-cyan-400">Join</span> GHRCE ACM
           </h3>
           <p className="text-neutral-400 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed text-center">
             Be part of a growing community of passionate developers, designers,
