@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Globe } from "lucide-react";
+import { Mail, MapPin,  } from "lucide-react";
 import ContactHero from "./contacthero";
 import TerminalContactForm from "./TerminalContact";
 import Footer from "./Footer";
@@ -48,31 +48,12 @@ export default function ContactUs() {
             </div>
 
             <div className="flex items-start gap-3">
-              <Phone className="text-sky-400 w-5 h-5 mt-1 shrink-0" />
-              <span className="text-neutral-300 text-sm sm:text-base">
-                +91 98765 43210
-              </span>
-            </div>
-
-            <div className="flex items-start gap-3">
               <MapPin className="text-sky-400 w-5 h-5 mt-1 shrink-0" />
               <span className="text-neutral-300 text-sm sm:text-base leading-relaxed">
                 G.H. Raisoni College of Engineering,
                 <br />
                 Nagpur, Maharashtra, India
               </span>
-            </div>
-
-            <div className="flex items-start gap-3">
-              <Globe className="text-sky-400 w-5 h-5 mt-1 shrink-0" />
-              <a
-                href="https://acmghrce.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-neutral-300 hover:text-sky-400 transition text-sm sm:text-base break-all"
-              >
-                acmghrce.vercel.app
-              </a>
             </div>
           </div>
 

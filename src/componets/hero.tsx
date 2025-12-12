@@ -45,7 +45,7 @@ export default function Hero() {
             className="mb-4"
           >
             <img
-              src="/images/logo.svg"
+              src="/images/logo.png"
               alt="ACM GHRCE Logo"
               className="mx-auto w-50 h-50 object-contain"
             />

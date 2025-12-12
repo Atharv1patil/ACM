@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
         {/* Logo */}
         <div className="flex justify-center mb-6">
           <img
-            src="/images/logo.svg"
+            src="/images/logo.png"
             alt="ACME Logo"
             className="h-25 w-auto drop-shadow-[0_0_10px_rgba(0,255,255,0.4)]"
           />
