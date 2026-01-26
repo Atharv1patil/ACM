@@ -83,7 +83,7 @@ const JoinUsSection = () => {
                   </motion.p>
 
                   <motion.a
-                    href="https://forms.gle/your-google-form-link"
+                    href="https://ghrce.acm.org"
                     target="_blank"
                     rel="noopener noreferrer"
                     initial={{ opacity: 0, y: 10 }}

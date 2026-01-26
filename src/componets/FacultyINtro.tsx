@@ -24,7 +24,7 @@ export default function FacultyIntro() {
 
           <p className="text-neutral-300 text-base sm:text-lg max-w-lg leading-relaxed">
             <strong className="text-cyan-300">Prof. [Faculty Name]</strong> — a visionary
-            leader and guiding force behind ACM GHRCE. With extensive experience in
+            leader and guiding force behind GHRCE ACM. With extensive experience in
             teaching, research, and innovation, our mentor inspires students to think
             creatively, collaborate effectively, and build technology-driven solutions
             that make a lasting impact.

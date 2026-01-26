@@ -5,10 +5,62 @@ import { Mail, MapPin,  } from "lucide-react";
 import ContactHero from "./contacthero";
 import TerminalContactForm from "./TerminalContact";
 import Footer from "./Footer";
+import { Helmet } from "react-helmet-async";
 
 export default function ContactUs() {
   return (
     <>
+     <Helmet>
+        <title>Contact Us - GHRCE ACM Student Chapter</title>
+        <meta name="description" content="Get in touch with GHRCE ACM Student Chapter. Contact us for membership inquiries, event collaborations, sponsorships, or any questions. Visit us at G.H. Raisoni College of Engineering, Nagpur." />
+        <meta name="keywords" content="Contact GHRCE ACM, reach ACM chapter, student organization contact, GHRCE Nagpur contact, ACM membership inquiry" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Contact Us - GHRCE ACM Student Chapter" />
+        <meta property="og:description" content="Get in touch with GHRCE ACM for membership, events, or collaborations." />
+        <meta property="og:url" content="https://ghrce.acm.org/contact" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://ghrce.acm.org/acm_logo_white_png.png" />
+        
+        {/* Twitter */}
+        <meta name="twitter:title" content="Contact Us - GHRCE ACM" />
+        <meta name="twitter:description" content="Get in touch with us for membership and collaborations" />
+        
+        <link rel="canonical" href="https://ghrce.acm.org/contact" />
+        
+        {/* Breadcrumb */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://ghrce.acm.org/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Contact",
+                "item": "https://ghrce.acm.org/contact"
+              }
+            ]
+          })}
+        </script>
+        
+        {/* Contact Page Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "name": "Contact GHRCE ACM Student Chapter",
+            "description": "Contact information for GHRCE ACM Student Chapter",
+            "url": "https://ghrce.acm.org/contact"
+          })}
+        </script>
+      </Helmet>
       {/* 🌟 Hero Section */}
       <section className="w-full bg-gradient-to-b from-[#0a0a0a] to-black">
         <ContactHero />
@@ -144,7 +196,7 @@ export default function ContactUs() {
               frameBorder="0"
               scrolling="no"
               src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=GH Raisoni College of Engineering&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-              title="ACM GHRCE Location"
+              title="GHRCE ACM Location"
             ></iframe>
           </div>
         </div>

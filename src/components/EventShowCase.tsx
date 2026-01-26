@@ -19,7 +19,7 @@ interface EventShowcaseProps {
   images: EventImage[];
 }
 
-const SECTION_HEIGHT = 1500;
+const SECTION_HEIGHT = 2800;
 
 const EventShowcase: React.FC<EventShowcaseProps> = ({ images }) => {
   return (
@@ -69,17 +69,17 @@ const CenterImage = () => {
 
   return (
     <motion.div
-      className="sticky top-0 h-screen w-full"
-      style={{
-        clipPath,
-        backgroundSize,
-        opacity,
-        backgroundImage:
-          "url(https://images.unsplash.com/photo-1460186136353-977e9d6085a1?q=80&w=2670&auto=format&fit=crop)",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    />
+  className="sticky top-0 h-screen w-full"
+  style={{
+    clipPath,
+    backgroundSize,
+    opacity,
+    backgroundImage: "url('/InstallationCeremony/1.PNG')",
+    backgroundPosition: "center top",
+    backgroundRepeat: "no-repeat",
+  }}
+/>
+
   );
 };
 

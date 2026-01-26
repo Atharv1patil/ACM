@@ -4,7 +4,7 @@ import React, { useEffect, useId, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 
-// ✅ Props type
+
 interface EventCardProps {
   title: string;
   shortDesc: string;
@@ -15,7 +15,7 @@ interface EventCardProps {
   registerLink?: string;
 }
 
-// 🧩 Single Expandable Event Card Component
+
 const EventCard: React.FC<EventCardProps> = ({
   title,
   shortDesc,
@@ -29,7 +29,7 @@ const EventCard: React.FC<EventCardProps> = ({
   const id = useId();
   const ref = useRef<HTMLDivElement>(null);
 
-  // Close when pressing ESC
+ 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") setExpanded(false);

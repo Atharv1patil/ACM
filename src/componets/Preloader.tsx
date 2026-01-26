@@ -82,7 +82,7 @@ export default function Preloader({ onFinish, duration = 2200 }: PreloaderProps)
             transition={{ delay: 0.9, duration: 0.7 }}
             className="mt-4 text-center"
           >
-            <h2 className="text-2xl font-bold text-white">ACM GHRCE</h2>
+            <h2 className="text-2xl font-bold text-white">GHRCE ACM</h2>
             <p className="text-cyan-400 text-sm">Student Chapter</p>
           </motion.div>
 

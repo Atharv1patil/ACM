@@ -4,11 +4,55 @@ import { motion } from "framer-motion"
 import { Users, Trophy, Code, Lightbulb } from "lucide-react"
 import Footer from "./Footer"
 import { useNavigate } from "react-router-dom"
+import { Helmet } from "react-helmet-async"
 
 export default function AboutUsPage() {
    const navigate = useNavigate()
   return (
+
+    <>
+     <Helmet>
+        <title>About Us - GHRCE ACM Student Chapter</title>
+        <meta name="description" content="Learn about GHRCE ACM Student Chapter, our mission, vision, and how we're building a vibrant tech community in Nagpur. Discover our journey, values, and commitment to computing education." />
+        <meta name="keywords" content="About GHRCE ACM, ACM chapter mission, student tech organization, computing community Nagpur, ACM GHRCE team" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="About Us - GHRCE ACM Student Chapter" />
+        <meta property="og:description" content="Learn about our mission, vision, and commitment to building a vibrant tech community at GHRCE Nagpur." />
+        <meta property="og:url" content="https://ghrce.acm.org/about" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://ghrce.acm.org/acm_logo_white_png.png" />
+        
+        {/* Twitter */}
+        <meta name="twitter:title" content="About Us - GHRCE ACM" />
+        <meta name="twitter:description" content="Learn about our mission and vision at GHRCE ACM Student Chapter" />
+        
+        <link rel="canonical" href="https://ghrce.acm.org/about" />
+        
+        {/* Breadcrumb */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://ghrce.acm.org/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "About",
+                "item": "https://ghrce.acm.org/about"
+              }
+            ]
+          })}
+        </script>
+      </Helmet>
     <div className="min-h-screen bg-black text-white">
+      
       {/* Hero Section with Gradient Background */}
       <section className="relative h-[500px] w-full overflow-hidden">
         {/* Animated Gradient Background */}
@@ -254,5 +298,6 @@ export default function AboutUsPage() {
       {/* Footer */}
       <Footer />
     </div>
+    </>
   )
 }

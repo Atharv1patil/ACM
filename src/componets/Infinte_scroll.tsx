@@ -67,12 +67,12 @@ export default function BrandMarquee() {
             willChange: "transform",
           }}
         >
-          {/* Original row */}
+         
           {brands.map((item, index) => (
             <BrandItem key={index} name={item.name} logo={item.logo} />
           ))}
 
-          {/* Duplicate row */}
+         
           {brands.map((item, index) => (
             <BrandItem key={`${index}-clone`} name={item.name} logo={item.logo} />
           ))}

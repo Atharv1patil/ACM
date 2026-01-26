@@ -8,12 +8,50 @@ import FAQ from "./FAQ"
 import Footer from "./Footer"
 import JoinUsSection from "./SolutionsSection"
 import { useNavigate } from "react-router-dom"
+import { Helmet } from "react-helmet-async"
 
 export default function Hero() {
   const navigate = useNavigate();
   
   return (
     <>
+<Helmet>
+        <title>GHRCE ACM Student Chapter | Official ACM Chapter in Nagpur</title>
+        <meta name="description" content="Official ACM Student Chapter at G.H. Raisoni College of Engineering, Nagpur. Join India's premier computing community for tech workshops, hackathons, coding competitions, mentorship, and professional development in computer science and technology." />
+        <meta name="keywords" content="GHRCE ACM, ACM GHRCE, Raisoni ACM Nagpur, ACM Student Chapter Nagpur, computer science club Nagpur, tech community GHRCE" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="GHRCE ACM Student Chapter | Official ACM Chapter in Nagpur" />
+        <meta property="og:description" content="Join India's premier computing community for tech workshops, hackathons, coding competitions, and professional development." />
+        <meta property="og:url" content="https://ghrce.acm.org/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://ghrce.acm.org/acm_logo_white_png.png" />
+        
+        {/* Twitter */}
+        <meta name="twitter:title" content="GHRCE ACM Student Chapter" />
+        <meta name="twitter:description" content="Official ACM Student Chapter at GHRCE Nagpur" />
+        <meta name="twitter:image" content="https://ghrce.acm.org/acm_logo_white_png.png" />
+        
+        <link rel="canonical" href="https://ghrce.acm.org/" />
+        
+        {/* Breadcrumb Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://ghrce.acm.org/"
+              }
+            ]
+          })}
+        </script>
+      </Helmet>
+      
+
       {/* Add padding-top to account for fixed navbar */}
       <section className="relative h-screen w-full overflow-hidden">
         {/* Background */}
@@ -46,7 +84,7 @@ export default function Hero() {
           >
             <img
               src="/acm-logo.svg"
-              alt="ACM GHRCE Logo"
+              alt="GHRCE ACM Logo"
               className="mx-auto w-150 h-50 object-contain mb-9"
             />
           </motion.div>
@@ -57,7 +95,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            ACM GHRCE Chapter
+            GHRCE ACM Chapter
           </motion.h1> */}
 
           <motion.p
