@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { Helmet } from "react-helmet-async";
 import { ReactLenis } from "lenis/react";
 import {
   motion,
@@ -20,7 +21,7 @@ interface EventShowcaseProps {
   images: EventImage[];
 }
 
-const SECTION_HEIGHT = 2800;
+const SECTION_HEIGHT = 3000;
 
 const EventShowcase: React.FC<EventShowcaseProps> = ({ images }) => {
   return (
@@ -233,15 +234,44 @@ const Gallery = () => {
     },
     {
       src: "/InstallationCeremony/7.JPG",
-      alt: "Installation Ceremony Moment 4",
+      alt: "Installation Ceremony Moment 8",
       start: 160,
       end: -160,
       className: "w-full md:w-1/2 md:ml-auto rounded-lg",
+    },
+    {
+      src: "/InstallationCeremony/RTK_7769.JPG",
+      alt: "Installation Ceremony Moment 9",
+      start: -120,
+      end: 130,
+      className: "w-full md:w-1/3 rounded-lg",
     }
   ];
 
   return (
     <div className="min-h-screen bg-black">
+      <Helmet>
+        <title>Gallery - Installation Ceremony Highlights</title>
+        <meta name="description" content="Explore our stunning gallery of Installation Ceremony highlights featuring beautiful moments captured with parallax scrolling effects." />
+        <meta name="keywords" content="gallery, installation ceremony, event photos, parallax gallery, photo showcase" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Gallery - Installation Ceremony Highlights" />
+        <meta property="og:description" content="Explore our stunning gallery of Installation Ceremony highlights featuring beautiful moments captured with parallax scrolling effects." />
+        <meta property="og:image" content="/InstallationCeremony/1.PNG" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Gallery - Installation Ceremony Highlights" />
+        <meta name="twitter:description" content="Explore our stunning gallery of Installation Ceremony highlights featuring beautiful moments captured with parallax scrolling effects." />
+        <meta name="twitter:image" content="/InstallationCeremony/1.PNG" />
+        
+        {/* Additional Meta Tags */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#000000" />
+      </Helmet>
+
       <div className="text-center py-8 px-4 w-full pt-20">
         <motion.div
           className="flex flex-col items-center gap-2"

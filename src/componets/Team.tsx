@@ -203,7 +203,7 @@ export default function Team() {
     <div className="min-h-screen bg-black">
       <section className="bg-black py-24 px-6 sm:px-10 lg:px-12 text-center">
         
-        {/* PAGE TITLE */}
+       
         <div className="mb-20">
           <h1 className="text-5xl sm:text-6xl font-extrabold text-white mb-6 tracking-tight">
              Our <span className="text-cyan-400">Team</span>
@@ -217,7 +217,7 @@ export default function Team() {
 
         <div className="max-w-7xl mx-auto flex flex-col items-center space-y-24">
 
-          {/* FACULTY */}
+          
           <div className="w-full">
             <h2 className="text-4xl font-bold text-cyan-400 mb-12 tracking-wide">
               Faculty
@@ -227,7 +227,7 @@ export default function Team() {
             </div>
           </div>
 
-          {/* CORE TEAM */}
+          
           <div className="w-full">
             <h2 className="text-4xl font-bold text-cyan-400 mb-12 tracking-wide">
               Core Team
@@ -239,7 +239,7 @@ export default function Team() {
             </div>
           </div>
 
-          {/* TECHNICAL TEAM */}
+         
           <div className="w-full">
             <h2 className="text-4xl font-bold text-cyan-400 mb-12 tracking-wide">
               Technical Team

@@ -25,12 +25,12 @@ export default function Hero() {
         <meta property="og:description" content="Join India's premier computing community for tech workshops, hackathons, coding competitions, and professional development." />
         <meta property="og:url" content="https://ghrce.acm.org/" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://ghrce.acm.org/acm_logo_white_png.png" />
+        <meta property="og:image" content="https://ghrce.acm.org/favicon.ico" />
         
         {/* Twitter */}
         <meta name="twitter:title" content="GHRCE ACM Student Chapter" />
         <meta name="twitter:description" content="Official ACM Student Chapter at GHRCE Nagpur" />
-        <meta name="twitter:image" content="https://ghrce.acm.org/acm_logo_white_png.png" />
+        <meta name="twitter:image" content="https://ghrce.acm.org/favicon.ico" />
         
         <link rel="canonical" href="https://ghrce.acm.org/" />
         
