@@ -444,7 +444,7 @@ return (
         )}
       </div>
 
-      {/* Terminal Footer */}
+      
       <div className="bg-black border-t border-cyan-500/20 px-6 py-4 flex gap-3 justify-end items-center">
         <button
           onClick={handleReset}

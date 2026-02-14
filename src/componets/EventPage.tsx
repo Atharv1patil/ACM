@@ -8,18 +8,6 @@ import Footer from "./Footer";
 
 // 🗓️ Event Data
 const allEvents = [
-  // {
-  //   title: "Hack the Future 2025",
-  //   shortDesc: "A 24-hour hackathon to innovate and collaborate.",
-  //   details:
-  //     "Hack the Future brings together coders, designers, and visionaries to build next-gen solutions using AI, IoT, and blockchain.",
-  //   image:
-  //     "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1000&q=80",
-  //   date: "March 15–16, 2025",
-  //   location: "GHRCE Auditorium",
-  //   registerLink: "#",
-  //   status: "upcoming",
-  // },
   {
     title: "Installation Ceremony 2026",
     shortDesc: "GHRCE ACM Student Chapter Installation & Recognition Ceremony.",
@@ -30,7 +18,29 @@ const allEvents = [
     date: "January 13, 2026",
     location: "Raisoni College, Nagpur",
     status: "past",
-  }
+  },
+  {
+  title: "Alumni Guest Lecture – Professor of Practice",
+  shortDesc: "Expert Talk on Information Security by Dr. Anant Joshi.",
+  details:
+    "The Department of Information Technology, G. H. Raisoni College of Engineering, Nagpur organized an Alumni Guest Lecture under the Professor of Practice initiative on December 26, 2025. The session was delivered by Dr. Anant Joshi, Academic Director and Associate Professor at the School of Business and Economics, Maastricht University, Netherlands. The expert talk focused on Global Information Management System and highlighted key aspects of information security, global information management practices, data-driven decision-making, and the role of information systems in modern organizations. Dr. Joshi shared real-world applications, international perspectives, and emerging trends in the field. The session was conducted at F-08, GHRCE, Nagpur and was attended by 60 students and faculty members. The lecture proved to be highly informative, engaging, and beneficial for enhancing students’ understanding of global IT and management systems",
+  image:
+    "/images/International_talks.png",
+  date: "December 26, 2025",
+  location: "F-08, GHRCE, Nagpur",
+  status: "past",
+},
+{
+  title: "Alumni Guest Lecture – Defense & Technological Integration",
+  shortDesc: "Expert session on modern warfare, defense innovation, and India’s global vision.",
+  details:
+    "The Department of Information Technology, G. H. Raisoni College of Engineering, Nagpur organized an Alumni Guest Lecture delivered by Mr. Sunil Shrivastava, Director of Warrior Infratech Pvt. Ltd. The session highlighted the pivotal role of engineering students in the defense sector, emphasizing technological integration, industry collaboration, and India’s vision of becoming a global leader in defense manufacturing. Mr. Shrivastava discussed how modern warfare is evolving with the integration of cutting-edge technologies into military frameworks. He also stressed the importance of skill development, innovation, and global competitiveness in strengthening national defense capabilities. The session was attended by faculty members and students and proved to be highly informative, engaging, and beneficial in enhancing students’ understanding of global warfare strategies and military frameworks.",
+  image:
+    "/images/Alumni_guest.jpg",
+  date: "December 26, 2025",
+  location: "F-08, GHRCE, Nagpur",
+  status: "past",
+}
 ];
 
 export default function EventsPage() {

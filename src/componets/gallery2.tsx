@@ -251,7 +251,7 @@ const Gallery = () => {
   return (
     <div className="min-h-screen bg-black">
       <Helmet>
-        <title>Gallery - Installation Ceremony Highlights</title>
+        <title>Gallery</title>
         <meta name="description" content="Explore our stunning gallery of Installation Ceremony highlights featuring beautiful moments captured with parallax scrolling effects." />
         <meta name="keywords" content="gallery, installation ceremony, event photos, parallax gallery, photo showcase" />
         
