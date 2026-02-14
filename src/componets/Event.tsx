@@ -2,8 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { Helmet } from 'react-helmet-async';
-
+import { Helmet } from "react-helmet";
 // 🌀 Shuffle Function
 const shuffle = <T,>(array: T[]): T[] => {
   let currentIndex = array.length,
@@ -46,7 +45,7 @@ const generateSquares = () => {
 
 // 🧩 Shuffle Grid Component (4 tiles)
 const ShuffleGrid = () => {
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [squares, setSquares] = useState(generateSquares());
 
   useEffect(() => {

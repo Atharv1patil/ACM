@@ -8,7 +8,8 @@ import FAQ from "./FAQ"
 import Footer from "./Footer"
 import JoinUsSection from "./SolutionsSection"
 import { useNavigate } from "react-router-dom"
-import { Helmet } from "react-helmet-async"
+import { Helmet } from "react-helmet"
+// import FramerCarouselThumbnails from "./Frame"
 
 export default function Hero() {
   const navigate = useNavigate();
@@ -130,9 +131,12 @@ export default function Hero() {
         <AboutSection />
         <WhatWeDo />
         {/* <CCG /> */}
+        {/* <MeetOurTeam /> */}
         <JoinUsSection />
         <FAQ />
+       
         <Footer />
+        
       </section>
     </>
   )

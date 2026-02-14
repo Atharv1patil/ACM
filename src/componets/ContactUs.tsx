@@ -5,7 +5,7 @@ import { Mail, MapPin,  } from "lucide-react";
 import ContactHero from "./contacthero";
 import TerminalContactForm from "./TerminalContact";
 import Footer from "./Footer";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 export default function ContactUs() {
   return (

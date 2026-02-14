@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { Users, Trophy, Code, Lightbulb } from "lucide-react"
 import Footer from "./Footer"
 import { useNavigate } from "react-router-dom"
-import { Helmet } from "react-helmet-async"
+import { Helmet } from "react-helmet"
 
 export default function AboutUsPage() {
    const navigate = useNavigate()

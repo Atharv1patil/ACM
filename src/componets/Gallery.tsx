@@ -1,5 +1,5 @@
 import InfiniteMenu from '@/components/InfiniteMenu';
-import { ComicText } from "@/components/ui/comic-text"
+// import { ComicText } from "@/components/ui/comic-text"
 import Footer from './Footer';
 
 
@@ -33,7 +33,7 @@ const items = [
 const Gallery = () => {
   return (
     <div>
-    <h1 id="about" className="text-4xl font-bold text-center my-8"><ComicText>Gallery </ComicText></h1>
+    <h1 id="about" className="text-4xl font-bold text-center my-8"></h1>
     <InfiniteMenu items={items}/>
     <div className="mt-10"></div>
     <Footer />
