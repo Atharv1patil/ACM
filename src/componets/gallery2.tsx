@@ -28,38 +28,38 @@ const events: EventGallery[] = [
   {
     id: 1,
     title: 'Installation Ceremony 2026',
-    cover: '/InstallationCeremony/2.JPG',
+    cover: 'https://res.cloudinary.com/dbdjd3yf6/image/upload/v1771867045/2_srj4sm.jpg',
     images: [
-      { id: 1, url: '/InstallationCeremony/2.JPG', title: 'Moment 1' },
-      { id: 2, url: '/InstallationCeremony/RTK_7709.JPG', title: 'Moment 2' },
-      { id: 3, url: '/InstallationCeremony/4.JPG', title: 'Moment 3' },
-      { id: 4, url: '/InstallationCeremony/3.JPG', title: 'Moment 4' },
-      { id: 5, url: '/InstallationCeremony/6.JPG', title: 'Moment 5' },
-      { id: 6, url: '/InstallationCeremony/5.JPG', title: 'Moment 6' },
-      { id: 7, url: '/InstallationCeremony/RTK_7731.JPG', title: 'Moment 7' },
-      { id: 8, url: '/InstallationCeremony/7.JPG', title: 'Moment 8' },
-      { id: 9, url: '/InstallationCeremony/RTK_7769.JPG', title: 'Moment 9' },
+      { id: 1, url: 'https://res.cloudinary.com/dbdjd3yf6/image/upload/v1771867045/2_srj4sm.jpg', title: 'Moment 1' },
+      { id: 2, url: 'https://res.cloudinary.com/dbdjd3yf6/image/upload/v1771866857/RTK_7709_fggewi.jpg', title: 'Moment 2' },
+      { id: 3, url: 'https://res.cloudinary.com/dbdjd3yf6/image/upload/v1771866871/4_o1ummj.jpg', title: 'Moment 3' },
+      { id: 4, url: 'https://res.cloudinary.com/dbdjd3yf6/image/upload/v1771866924/3_zxjcbw.jpg', title: 'Moment 4' },
+      { id: 5, url: 'https://res.cloudinary.com/dbdjd3yf6/image/upload/v1771866899/6_pg36wy.jpg', title: 'Moment 5' },
+      { id: 6, url: 'https://res.cloudinary.com/dbdjd3yf6/image/upload/v1771866915/5_vphlbd.jpg', title: 'Moment 6' },
+      { id: 7, url: 'https://res.cloudinary.com/dbdjd3yf6/image/upload/v1771866867/RTK_7731_dxe06n.jpg', title: 'Moment 7' },
+      { id: 8, url: 'https://res.cloudinary.com/dbdjd3yf6/image/upload/v1771866836/7_ogfux3.jpg', title: 'Moment 8' },
+      { id: 9, url: 'https://res.cloudinary.com/dbdjd3yf6/image/upload/v1771866901/RTK_7769_ks9a6z.jpg', title: 'Moment 9' },
     ],
   },
   {
     id: 2,
     title: 'International Talks 2026',
-    cover: '/International_talks/talks1.jpg',
+    cover: 'https://res.cloudinary.com/dbdjd3yf6/image/upload/v1771867437/talks1_srfoje.jpg',
     images: [
-      { id: 1, url: '/International_talks/talks1.jpg', title: 'Event 2 - Image 1' },
-      { id: 2, url: '/International_talks/talks2.jpg', title: 'Event 2 - Image 2' },
-      { id: 3, url: '/International_talks/talks3.jpg', title: 'Event 2 - Image 3' },
-      { id: 4, url: '/International_talks/talks4.jpg', title: 'Event 2 - Image 4' },
+      { id: 1, url: 'https://res.cloudinary.com/dbdjd3yf6/image/upload/v1771867437/talks1_srfoje.jpg', title: 'Event 2 - Image 1' },
+      { id: 2, url: 'https://res.cloudinary.com/dbdjd3yf6/image/upload/v1771867436/talks2_eszg41.jpg', title: 'Event 2 - Image 2' },
+      { id: 3, url: 'https://res.cloudinary.com/dbdjd3yf6/image/upload/v1771867442/talks3_gp1usg.jpg', title: 'Event 2 - Image 3' },
+      { id: 4, url: 'https://res.cloudinary.com/dbdjd3yf6/image/upload/v1771867429/talks4_rsawoh.jpg', title: 'Event 2 - Image 4' },
     ],
   },
   {
     id: 3,
     title: 'Alumni Guest Lecture 2026',
-    cover: '/Alumni_talks/talks1.jpg',
+    cover: 'https://res.cloudinary.com/dbdjd3yf6/image/upload/v1771866380/talks1_lnsaed.jpg',
     images: [
-      { id: 1, url: '/Alumni_talks/talks2.jpg', title: 'Event 3 - Image 1' },
-      { id: 2, url: '/Alumni_talks/talks3.jpg', title: 'Event 3 - Image 2' },
-      { id: 3, url: '/Alumni_talks/Sunil (1).jpg', title: 'Event 3 - Image 3' },
+      { id: 1, url: 'https://res.cloudinary.com/dbdjd3yf6/image/upload/v1771866380/talks1_lnsaed.jpg', title: 'Event 3 - Image 1' },
+      { id: 2, url: 'https://res.cloudinary.com/dbdjd3yf6/image/upload/v1771866385/talks3_xpierj.jpg', title: 'Event 3 - Image 2' },
+      { id: 3, url: 'https://res.cloudinary.com/dbdjd3yf6/image/upload/v1771866366/Sunil_1_ikvfkd.jpg', title: 'Event 3 - Image 3' },
     ],
   }
 ];
@@ -80,9 +80,7 @@ export default function Gallery() {
         <h1 className="text-4xl md:text-5xl font-bold text-cyan-400">
           Our Gallery
         </h1>
-        <p className="text-white/60 uppercase mt-2">
-          Installation Ceremony Highlights
-        </p>
+        
       </div>
 
       {/* GRID */}

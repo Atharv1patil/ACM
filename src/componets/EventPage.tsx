@@ -57,7 +57,7 @@ export default function EventsPage() {
 
       <main className="bg-black text-white min-h-screen py-16 px-6">
         <h1 className="text-4xl font-bold text-center text-cyan-400 mb-10">
-          ACM GHRCE Events
+          GHRCE ACM Events
         </h1>
 
         {/* 🔹 Filter Buttons */}
